@@ -103,6 +103,14 @@ class Metric:
     BAT_3_MAJOR_ALERT_2 = 101
     BAT_3_MAJOR_ALERT_3 = 102
     BAT_3_MINOR_ALERT = 103
+    MEM_USED_MB = 104
+    MEM_TOTAL = 105
+    SWAP_USED_MB = 106
+    SWAP_TOTAL = 107
+    SYSTEM_UPTIME = 108
+    CPU_TEMP = 109
+    CPU_USAGE_USER = 110
+    CPU_USAGE_SYSTEM = 111
 
 
 METRIC_TYPE_VALUES =  {value: name for name, value in vars(MetricTypes).items() if name.isupper()}

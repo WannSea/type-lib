@@ -103,4 +103,12 @@ pub enum Metric {
     Bat3MajorAlert2 = 101,
     Bat3MajorAlert3 = 102,
     Bat3MinorAlert = 103,
+    MemUsedMb = 104,
+    MemTotal = 105,
+    SwapUsedMb = 106,
+    SwapTotal = 107,
+    SystemUptime = 108,
+    CpuTemp = 109,
+    CpuUsageUser = 110,
+    CpuUsageSystem = 111,
 }
