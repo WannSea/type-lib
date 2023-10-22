@@ -1,4 +1,4 @@
-pub enum MetricTypes {
+pub enum Metric {
     GpsLat = 0,
     GpsLon = 1,
     GpsSpeed = 2,

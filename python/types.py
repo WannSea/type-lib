@@ -1,4 +1,4 @@
-class MetricTypes:
+class Metric:
     GPS_LAT = 0
     GPS_LON = 1
     GPS_SPEED = 2
