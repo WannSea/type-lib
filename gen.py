@@ -1,6 +1,7 @@
 import toml
 
 RUST_OUT = "./rust/src/types.rs"
+RUST_ENUM_NAME = "Metric"
 CARGO_TOML = "./rust/Cargo.toml"
 
 PY_OUT = "./python/metric.py"
@@ -15,36 +16,36 @@ def gen_rs(metric_types):
     metrics = [snake_to_camel_case(x) for x in metric_types]
     metric_values = [f"{metrics[i]} = {i}" for i in range(len(metric_types))]
 
-    match_str_metrics = map(lambda x: f"\"{x}\" => Ok(Metric::{x})", metrics)
-    match_int_metrics = [f"{i} if {i} == Metric::{metrics[i]} as i32 => Ok(Metric::{metrics[i]})" for i in range(len(metrics))]
+    match_str_metrics = map(lambda x: f"\"{x}\" => Ok({RUST_ENUM_NAME}::{x})", metrics)
+    match_int_metrics = [f"{i} if {i} == {RUST_ENUM_NAME}::{metrics[i]} as i32 => Ok({RUST_ENUM_NAME}::{metrics[i]})" for i in range(len(metrics))]
 
     out = f"""use std::fmt;
 use std::convert::TryFrom;
     
 #[derive(Debug)]
-pub enum Metric {{
+pub enum {RUST_ENUM_NAME} {{
     {",\n    ".join(metric_values)}
 }}
 
-impl std::str::FromStr for Metric {{
+impl std::str::FromStr for {RUST_ENUM_NAME} {{
     type Err = String;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {{
         match s {{
             {",\n            ".join(match_str_metrics)},
-            _ => Err(format!("'{{}}' is not a valid value for Metric", s)),
+            _ => Err(format!("'{{}}' is not a valid value for {RUST_ENUM_NAME}", s)),
         }}
     }}
 }}
 
-impl fmt::Display for Metric {{
+impl fmt::Display for {RUST_ENUM_NAME} {{
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{
         write!(f, "{{:?}}", self)
     }}
 }}
 
 
-impl TryFrom<u32> for Metric {{
+impl TryFrom<u32> for {RUST_ENUM_NAME} {{
     type Error = ();
 
     fn try_from(v: u32) -> Result<Self, Self::Error> {{
