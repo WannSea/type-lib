@@ -11,7 +11,7 @@ def snake_to_camel_case(input):
     return ''.join(ele.title() for ele in temp[0:])
 
 def gen_rs(metric_types):
-    out = "pub enum MetricTypes {\n"
+    out = "pub enum Metric {\n"
 
     for i in range(len(metric_types)):
         out += f"    {snake_to_camel_case(metric_types[i])} = {i},\n"
@@ -30,7 +30,7 @@ def gen_rs(metric_types):
             ft.write(toml.dumps(data))
 
 def gen_py(metric_types):
-    out = "class MetricTypes:\n"
+    out = "class Metric:\n"
     for i in range(len(metric_types)):
         out += f"    {metric_types[i]} = {i}\n"
 
