@@ -4,10 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wannsea_types"
-version = "0.0.33"
+version = "0.0.34"
 description = ""
 requires-python = ">=3.8"
 dependencies = []
-
-[tool.setuptools]
-packages = [ "types",]
