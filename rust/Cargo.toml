@@ -1,5 +1,5 @@
 [package]
-name = "wannsea-type-lib"
+name = "wannsea_types"
 version = "0.1.21"
 edition = "2021"
 
