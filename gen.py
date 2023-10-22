@@ -74,7 +74,7 @@ def gen_py(metric_types):
     for i in range(len(metric_types)):
         out += f"    {metric_types[i]} = {i}\n"
 
-    out += f"\n\nMETRIC_TYPE_VALUES =  {{value: name for name, value in vars(MetricTypes).items() if name.isupper()}}"
+    out += f"\n\nMETRIC_TYPE_VALUES =  {{value: name for name, value in vars(Metric).items() if name.isupper()}}"
 
     with open(PY_OUT, "w") as f:
         f.write(out)

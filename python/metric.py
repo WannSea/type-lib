@@ -112,4 +112,4 @@ class Metric:
     CPU_USAGE_SYSTEM = 110
 
 
-METRIC_TYPE_VALUES =  {value: name for name, value in vars(MetricTypes).items() if name.isupper()}
+METRIC_TYPE_VALUES =  {value: name for name, value in vars(Metric).items() if name.isupper()}
