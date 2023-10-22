@@ -15,9 +15,11 @@ def gen_rs(metric_types):
     metrics = [snake_to_camel_case(x) for x in metric_types]
     metric_values = [f"{metrics[i]} = {i}" for i in range(len(metric_types))]
 
-    match_metrics = map(lambda x: f"\"{x}\" => Ok(Metric::{x})", metrics)
+    match_str_metrics = map(lambda x: f"\"{x}\" => Ok(Metric::{x})", metrics)
+    match_int_metrics = [f"{i} if {i} == Metric::{metrics[i]} as i32 => Ok(Metric::{metrics[i]})" for i in range(len(metrics))]
 
     out = f"""use std::fmt;
+use std::convert::TryFrom;
     
 #[derive(Debug)]
 pub enum Metric {{
@@ -29,7 +31,7 @@ impl std::str::FromStr for Metric {{
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {{
         match s {{
-            {",\n            ".join(match_metrics)},
+            {",\n            ".join(match_str_metrics)},
             _ => Err(format!("'{{}}' is not a valid value for Metric", s)),
         }}
     }}
@@ -38,6 +40,18 @@ impl std::str::FromStr for Metric {{
 impl fmt::Display for Metric {{
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{
         write!(f, "{{:?}}", self)
+    }}
+}}
+
+
+impl TryFrom<i32> for Metric {{
+    type Error = ();
+
+    fn try_from(v: i32) -> Result<Self, Self::Error> {{
+        match v {{
+            {",\n            ".join(match_int_metrics)},
+            _ => Err(()),
+        }}
     }}
 }}
     """
