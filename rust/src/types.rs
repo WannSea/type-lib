@@ -244,10 +244,10 @@ impl fmt::Display for Metric {
 }
 
 
-impl TryFrom<i32> for Metric {
+impl TryFrom<u32> for Metric {
     type Error = ();
 
-    fn try_from(v: i32) -> Result<Self, Self::Error> {
+    fn try_from(v: u32) -> Result<Self, Self::Error> {
         match v {
             0 if 0 == Metric::GpsLat as i32 => Ok(Metric::GpsLat),
             1 if 1 == Metric::GpsLon as i32 => Ok(Metric::GpsLon),

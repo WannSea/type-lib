@@ -44,10 +44,10 @@ impl fmt::Display for Metric {{
 }}
 
 
-impl TryFrom<i32> for Metric {{
+impl TryFrom<u32> for Metric {{
     type Error = ();
 
-    fn try_from(v: i32) -> Result<Self, Self::Error> {{
+    fn try_from(v: u32) -> Result<Self, Self::Error> {{
         match v {{
             {",\n            ".join(match_int_metrics)},
             _ => Err(()),
