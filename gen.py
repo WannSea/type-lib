@@ -11,12 +11,28 @@ def snake_to_camel_case(input):
     return ''.join(ele.title() for ele in temp[0:])
 
 def gen_rs(metric_types):
-    out = "pub enum Metric {\n"
 
-    for i in range(len(metric_types)):
-        out += f"    {snake_to_camel_case(metric_types[i])} = {i},\n"
+    metrics = [snake_to_camel_case(x) for x in metric_types]
+    metric_values = [f"{metrics[i]} = {i}" for i in range(len(metric_types))]
 
-    out += "}"
+    match_metrics = map(lambda x: f"\"{x}\" => Ok(Metric::{x})", metrics)
+
+    out = f"""pub enum Metric {{
+    {",\n    ".join(metric_values)}
+}}
+
+impl std::str::FromStr for Metric {{
+    type Err = String;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {{
+        match s {{
+            {",\n            ".join(match_metrics)},
+            _ => Err(format!("'{{}}' is not a valid value for Metric", s)),
+        }}
+    }}
+}}
+    """
+
 
     with open(RUST_OUT, "w") as f:
         f.write(out)

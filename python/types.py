@@ -108,9 +108,8 @@ class Metric:
     SWAP_USED_MB = 106
     SWAP_TOTAL = 107
     SYSTEM_UPTIME = 108
-    CPU_TEMP = 109
-    CPU_USAGE_USER = 110
-    CPU_USAGE_SYSTEM = 111
+    CPU_USAGE_USER = 109
+    CPU_USAGE_SYSTEM = 110
 
 
 METRIC_TYPE_VALUES =  {value: name for name, value in vars(MetricTypes).items() if name.isupper()}
