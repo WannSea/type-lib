@@ -1,3 +1,6 @@
+use std::fmt;
+    
+#[derive(Debug)]
 pub enum Metric {
     GpsLat = 0,
     GpsLon = 1,
@@ -230,6 +233,12 @@ impl std::str::FromStr for Metric {
             "CpuUsageSystem" => Ok(Metric::CpuUsageSystem),
             _ => Err(format!("'{}' is not a valid value for Metric", s)),
         }
+    }
+}
+
+impl fmt::Display for Metric {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
     }
 }
     

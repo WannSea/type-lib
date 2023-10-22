@@ -17,7 +17,10 @@ def gen_rs(metric_types):
 
     match_metrics = map(lambda x: f"\"{x}\" => Ok(Metric::{x})", metrics)
 
-    out = f"""pub enum Metric {{
+    out = f"""use std::fmt;
+    
+#[derive(Debug)]
+pub enum Metric {{
     {",\n    ".join(metric_values)}
 }}
 
@@ -29,6 +32,12 @@ impl std::str::FromStr for Metric {{
             {",\n            ".join(match_metrics)},
             _ => Err(format!("'{{}}' is not a valid value for Metric", s)),
         }}
+    }}
+}}
+
+impl fmt::Display for Metric {{
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{
+        write!(f, "{{:?}}", self)
     }}
 }}
     """
