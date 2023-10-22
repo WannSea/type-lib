@@ -3,7 +3,7 @@ import toml
 RUST_OUT = "./rust/src/types.rs"
 CARGO_TOML = "./rust/Cargo.toml"
 
-PY_OUT = "./python/types.py"
+PY_OUT = "./python/metric.py"
 PYPROJECT_TOML = "./python/pyproject.toml"
 
 def snake_to_camel_case(input):
