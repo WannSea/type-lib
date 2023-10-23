@@ -4,6 +4,7 @@ from parsed_metric import ParsedMetric
 
 RUST_OUT = "./rust/src/types.rs"
 RUST_ENUM_NAME = "Metric"
+METRIC_ID_TYPE = "u8"
 CARGO_TOML = "./rust/Cargo.toml"
 
 def get_string_metric_matches_rs(metric_types: list[ParsedMetric]):
@@ -23,8 +24,9 @@ def gen_rs(metric_types: list[ParsedMetric]):
 
     out = f"""use std::fmt;
 use std::convert::TryFrom;
+use serde::{{Serialize, Deserialize}};
     
-#[derive(Debug)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum {RUST_ENUM_NAME} {{
     {",\n    ".join(metric_values)}
 }}
@@ -46,11 +48,11 @@ impl fmt::Display for {RUST_ENUM_NAME} {{
     }}
 }}
 
-
-impl TryFrom<u32> for {RUST_ENUM_NAME} {{
+// Metric ID to 
+impl TryFrom<{METRIC_ID_TYPE}> for {RUST_ENUM_NAME} {{
     type Error = ();
 
-    fn try_from(v: u32) -> Result<Self, Self::Error> {{
+    fn try_from(v: {METRIC_ID_TYPE}) -> Result<Self, Self::Error> {{
         match v {{
             {",\n            ".join(match_int_metrics)},
             _ => Err(()),
