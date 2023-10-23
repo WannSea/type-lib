@@ -120,6 +120,7 @@ pub enum Metric {
     CellularNetworkMode = 113
 }
 
+// string to enum
 impl std::str::FromStr for Metric {
     type Err = String;
 
@@ -244,13 +245,14 @@ impl std::str::FromStr for Metric {
     }
 }
 
+// enum to string representation
 impl fmt::Display for Metric {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{:?}", self)
     }
 }
 
-// Metric ID to 
+// u8 to enum
 impl TryFrom<u8> for Metric {
     type Error = ();
 
@@ -375,6 +377,7 @@ impl TryFrom<u8> for Metric {
     }
 }
 
+// transform enum value to string representation
 pub fn transform_metric_val(id: Metric, value: Vec<u8>) -> String {
     match id {
         Metric::CellularNetworkMode => String::from_utf8(value).unwrap(),

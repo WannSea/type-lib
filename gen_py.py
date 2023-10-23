@@ -18,13 +18,23 @@ def get_metric_val(id, val):
         return struct.unpack('<f', val)[0]
 """
 
+    with open(PY_OUT, "r") as f:
+        if f.read() == out:
+            print("No changes in python lib. Leaving as is.")
+            return
+
     with open(PY_OUT, "w") as f:
         f.write(out)
+        
+        with open(PYPROJECT_TOML, "r") as pyproject:
+            data = toml.load(pyproject)
+            project_version = data["project"]["version"].split(".")
+            version = int(project_version[2]) + 1
+            new_version = f"{project_version[0]}.{project_version[1]}.{version}"
+            data["project"]["version"] = new_version
+            with open(PYPROJECT_TOML, "w") as ft:
+                ft.write(toml.dumps(data))
 
-    with open(PYPROJECT_TOML, "r") as pyproject:
-        data = toml.load(pyproject)
-        project_version = data["project"]["version"].split(".")
-        version = int(project_version[2]) + 1
-        data["project"]["version"] = f"{project_version[0]}.{project_version[1]}.{version}"
-        with open(PYPROJECT_TOML, "w") as ft:
-            ft.write(toml.dumps(data))
+            print(f"Updated python lib to {new_version}")
+
+            

@@ -10,6 +10,7 @@ if __name__ == "__main__":
     with open("./metrics.txt", "r") as metrics:
         metric_types = list(map(line_to_metric, filter(lambda x: x and not x.startswith('#'), map(lambda x: x.replace("\n", ""), metrics.readlines()))))
 
-        print(metric_types)
         gen_rs(metric_types)
         gen_py(metric_types)
+
+        print("Successfully generated libs!")

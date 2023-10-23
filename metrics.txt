@@ -2,6 +2,7 @@
 # Used for generating rust & python libs
 # Each line represents a metric with default data type f32
 # Custom data types can be notated using rust notation (e.g. METRIC_STRING:String)
+# Currently supported data types: f32, String
 
 GPS_LAT
 GPS_LON

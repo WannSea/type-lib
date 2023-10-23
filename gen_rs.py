@@ -4,7 +4,6 @@ from parsed_metric import ParsedMetric
 
 RUST_OUT = "./rust/src/types.rs"
 RUST_ENUM_NAME = "Metric"
-METRIC_ID_TYPE = "u8"
 CARGO_TOML = "./rust/Cargo.toml"
 
 def get_string_metric_matches_rs(metric_types: list[ParsedMetric]):
@@ -31,6 +30,7 @@ pub enum {RUST_ENUM_NAME} {{
     {",\n    ".join(metric_values)}
 }}
 
+// string to enum
 impl std::str::FromStr for {RUST_ENUM_NAME} {{
     type Err = String;
 
@@ -42,17 +42,18 @@ impl std::str::FromStr for {RUST_ENUM_NAME} {{
     }}
 }}
 
+// enum to string representation
 impl fmt::Display for {RUST_ENUM_NAME} {{
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{
         write!(f, "{{:?}}", self)
     }}
 }}
 
-// Metric ID to 
-impl TryFrom<{METRIC_ID_TYPE}> for {RUST_ENUM_NAME} {{
+// u8 to enum
+impl TryFrom<u8> for {RUST_ENUM_NAME} {{
     type Error = ();
 
-    fn try_from(v: {METRIC_ID_TYPE}) -> Result<Self, Self::Error> {{
+    fn try_from(v: u8) -> Result<Self, Self::Error> {{
         match v {{
             {",\n            ".join(match_int_metrics)},
             _ => Err(()),
@@ -60,6 +61,7 @@ impl TryFrom<{METRIC_ID_TYPE}> for {RUST_ENUM_NAME} {{
     }}
 }}
 
+// transform enum value to string representation
 pub fn transform_metric_val(id: {RUST_ENUM_NAME}, value: Vec<u8>) -> String {{
     match id {{
         {",\n     ".join(get_string_metric_matches_rs(metric_types))},
@@ -68,13 +70,20 @@ pub fn transform_metric_val(id: {RUST_ENUM_NAME}, value: Vec<u8>) -> String {{
 }}
 """
 
+    with open(RUST_OUT, "r") as f:
+        if f.read() == out:
+            print("No changes in rust lib. Leaving as is.")
+            return
+        
     with open(RUST_OUT, "w") as f:
         f.write(out)
 
-    with open(CARGO_TOML, "r") as cargo:
-        data = toml.load(cargo)
-        pkg_version = data["package"]["version"].split(".")
-        version = int(pkg_version[2]) + 1
-        data["package"]["version"] = f"{pkg_version[0]}.{pkg_version[1]}.{version}"
-        with open(CARGO_TOML, "w") as ft:
-            ft.write(toml.dumps(data))
+        with open(CARGO_TOML, "r") as cargo:
+            data = toml.load(cargo)
+            pkg_version = data["package"]["version"].split(".")
+            version = int(pkg_version[2]) + 1
+            new_version = f"{pkg_version[0]}.{pkg_version[1]}.{version}"
+            data["package"]["version"] = new_version
+            with open(CARGO_TOML, "w") as ft:
+                ft.write(toml.dumps(data))
+            print(f"Updated rust lib to {new_version}")
