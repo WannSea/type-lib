@@ -8,7 +8,7 @@ PYPROJECT_TOML = "./python/pyproject.toml"
 def gen_py(metric_types: list[ParsedMetric]):
     out = f"""import struct
 class Metric:
-    {",\n    ".join([f"{metric_types[i].name} = {i}" for i in range (len(metric_types))])}
+    {"\n    ".join([f"{metric_types[i].name} = {i}" for i in range (len(metric_types))])}
 
 METRIC_TYPE_VALUES =  {{value: name for name, value in vars(Metric).items() if name.isupper()}}
 
