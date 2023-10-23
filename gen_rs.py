@@ -57,7 +57,7 @@ impl TryFrom<u32> for {RUST_ENUM_NAME} {{
 pub fn transform_metric_val(id: {RUST_ENUM_NAME}, value: Vec<u8>) -> String {{
     match id {{
         {",\n     ".join(get_string_metric_matches_rs(metric_types))},
-        _ => f32::from_be_bytes(value[0..4].try_into().unwrap()).to_string()
+        _ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()
     }}
 }}
 """
