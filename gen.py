@@ -1,9 +1,6 @@
-import toml
 from gen_py import gen_py
 from parsed_metric import ParsedMetric
 from gen_rs import gen_rs
-
-
 
 def line_to_metric(line: str):
     typed_metric = line.split(":")

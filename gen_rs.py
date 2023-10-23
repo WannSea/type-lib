@@ -9,13 +9,17 @@ CARGO_TOML = "./rust/Cargo.toml"
 def get_string_metric_matches_rs(metric_types: list[ParsedMetric]):
     return map(lambda x: f"{RUST_ENUM_NAME}::{x.get_camel_case_name()} => String::from_utf8(value).unwrap()", filter(lambda x: x.type == ParsedMetric.TYPE_STRING, metric_types))
 
+def get_default_metric_match_rs():
+    return "_ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()"
+
+
 def gen_rs(metric_types: list[ParsedMetric]):
 
     metrics = [x.get_camel_case_name() for x in metric_types]
     metric_values = [f"{metrics[i]} = {i}" for i in range(len(metric_types))]
 
     match_str_metrics = map(lambda x: f"\"{x}\" => Ok({RUST_ENUM_NAME}::{x})", metrics)
-    match_int_metrics = [f"{i} if {i} == {RUST_ENUM_NAME}::{metrics[i]} as i32 => Ok({RUST_ENUM_NAME}::{metrics[i]})" for i in range(len(metrics))]
+    match_int_metrics = [f"{i} => Ok({RUST_ENUM_NAME}::{metrics[i]})" for i in range(len(metrics))]
 
     out = f"""use std::fmt;
 use std::convert::TryFrom;
@@ -57,11 +61,10 @@ impl TryFrom<u32> for {RUST_ENUM_NAME} {{
 pub fn transform_metric_val(id: {RUST_ENUM_NAME}, value: Vec<u8>) -> String {{
     match id {{
         {",\n     ".join(get_string_metric_matches_rs(metric_types))},
-        _ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()
+        {get_default_metric_match_rs()}
     }}
 }}
 """
-
 
     with open(RUST_OUT, "w") as f:
         f.write(out)
