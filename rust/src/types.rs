@@ -1,7 +1,8 @@
 use std::fmt;
 use std::convert::TryFrom;
+use serde::{Serialize, Deserialize};
     
-#[derive(Debug)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum Metric {
     GpsLat = 0,
     GpsLon = 1,
@@ -249,11 +250,11 @@ impl fmt::Display for Metric {
     }
 }
 
-
-impl TryFrom<u32> for Metric {
+// Metric ID to 
+impl TryFrom<u8> for Metric {
     type Error = ();
 
-    fn try_from(v: u32) -> Result<Self, Self::Error> {
+    fn try_from(v: u8) -> Result<Self, Self::Error> {
         match v {
             0 => Ok(Metric::GpsLat),
             1 => Ok(Metric::GpsLon),
