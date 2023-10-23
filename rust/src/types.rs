@@ -114,7 +114,9 @@ pub enum Metric {
     CpuUsageSystem = 108,
     TxInPerSec = 109,
     TxOutPerSec = 110,
-    TxQueueCount = 111
+    TxQueueCount = 111,
+    CellularSignalQuality = 112,
+    CellularNetworkMode = 113
 }
 
 impl std::str::FromStr for Metric {
@@ -234,6 +236,8 @@ impl std::str::FromStr for Metric {
             "TxInPerSec" => Ok(Metric::TxInPerSec),
             "TxOutPerSec" => Ok(Metric::TxOutPerSec),
             "TxQueueCount" => Ok(Metric::TxQueueCount),
+            "CellularSignalQuality" => Ok(Metric::CellularSignalQuality),
+            "CellularNetworkMode" => Ok(Metric::CellularNetworkMode),
             _ => Err(format!("'{}' is not a valid value for Metric", s)),
         }
     }
@@ -363,8 +367,16 @@ impl TryFrom<u32> for Metric {
             109 if 109 == Metric::TxInPerSec as i32 => Ok(Metric::TxInPerSec),
             110 if 110 == Metric::TxOutPerSec as i32 => Ok(Metric::TxOutPerSec),
             111 if 111 == Metric::TxQueueCount as i32 => Ok(Metric::TxQueueCount),
+            112 if 112 == Metric::CellularSignalQuality as i32 => Ok(Metric::CellularSignalQuality),
+            113 if 113 == Metric::CellularNetworkMode as i32 => Ok(Metric::CellularNetworkMode),
             _ => Err(()),
         }
     }
 }
-    
+
+pub fn transform_metric_val(id: Metric, value: Vec<u8>) -> String {
+    match id {
+        Metric::CellularNetworkMode => String::from_utf8(value).unwrap(),
+        _ => f32::from_be_bytes(value[0..4].try_into().unwrap()).to_string()
+    }
+}

@@ -1,3 +1,8 @@
+# Custom WannSea metric definition file
+# Used for generating rust & python libs
+# Each line represents a metric with default data type f32
+# Custom data types can be notated using ts notation (e.g. METRIC_STRING:String)
+
 GPS_LAT
 GPS_LON
 GPS_SPEED
@@ -125,3 +130,6 @@ CPU_USAGE_SYSTEM
 TX_IN_PER_SEC
 TX_OUT_PER_SEC
 TX_QUEUE_COUNT
+
+CELLULAR_SIGNAL_QUALITY
+CELLULAR_NETWORK_MODE:String
