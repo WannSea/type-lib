@@ -377,6 +377,6 @@ impl TryFrom<u32> for Metric {
 pub fn transform_metric_val(id: Metric, value: Vec<u8>) -> String {
     match id {
         Metric::CellularNetworkMode => String::from_utf8(value).unwrap(),
-        _ => f32::from_be_bytes(value[0..4].try_into().unwrap()).to_string()
+        _ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()
     }
 }
