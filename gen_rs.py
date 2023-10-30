@@ -7,7 +7,7 @@ RUST_ENUM_NAME = "Metric"
 CARGO_TOML = "./rust/Cargo.toml"
 
 def get_string_metric_matches_rs(metric_types: list[ParsedMetric]):
-    return map(lambda x: f"{RUST_ENUM_NAME}::{x.get_camel_case_name()} => String::from_utf8(value).unwrap()", filter(lambda x: x.type == ParsedMetric.TYPE_STRING, metric_types))
+    return map(lambda x: f"{RUST_ENUM_NAME}::{x.get_camel_case_name()} => String::from_utf8(value).unwrap()", filter(lambda x: x.is_str, metric_types))
 
 def get_default_metric_match_rs():
     return "_ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()"

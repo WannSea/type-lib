@@ -1,8 +1,7 @@
 use std::fmt;
 use std::convert::TryFrom;
-use serde::{Serialize, Deserialize};
     
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
 pub enum Metric {
     GpsLat = 0,
     GpsLon = 1,
