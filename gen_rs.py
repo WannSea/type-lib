@@ -23,9 +23,8 @@ def gen_rs(metric_types: list[ParsedMetric]):
 
     out = f"""use std::fmt;
 use std::convert::TryFrom;
-use serde::{{Serialize, Deserialize}};
     
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
 pub enum {RUST_ENUM_NAME} {{
     {",\n    ".join(metric_values)}
 }}
@@ -61,11 +60,13 @@ impl TryFrom<u8> for {RUST_ENUM_NAME} {{
     }}
 }}
 
-// transform enum value to string representation
-pub fn transform_metric_val(id: {RUST_ENUM_NAME}, value: Vec<u8>) -> String {{
-    match id {{
-        {",\n     ".join(get_string_metric_matches_rs(metric_types))},
-        {get_default_metric_match_rs()}
+impl {RUST_ENUM_NAME} {{
+    // transform enum value to string representation
+    pub fn transform_metric_val(&self, value: Vec<u8>) -> String {{
+        match self {{
+            {",\n     ".join(get_string_metric_matches_rs(metric_types))},
+            {get_default_metric_match_rs()}
+        }}
     }}
 }}
 """

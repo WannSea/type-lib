@@ -376,10 +376,12 @@ impl TryFrom<u8> for Metric {
     }
 }
 
-// transform enum value to string representation
-pub fn transform_metric_val(id: Metric, value: Vec<u8>) -> String {
-    match id {
-        Metric::CellularNetworkMode => String::from_utf8(value).unwrap(),
-        _ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()
+impl Metric {
+    // transform enum value to string representation
+    pub fn transform_metric_val(&self, value: Vec<u8>) -> String {
+        match self {
+            Metric::CellularNetworkMode => String::from_utf8(value).unwrap(),
+            _ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()
+        }
     }
 }
