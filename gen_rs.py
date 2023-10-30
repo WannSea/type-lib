@@ -62,7 +62,7 @@ impl TryFrom<u8> for {RUST_ENUM_NAME} {{
 
 impl {RUST_ENUM_NAME} {{
     // transform enum value to string representation
-    pub fn transform_metric_val(&self, value: Vec<u8>) -> String {{
+    pub fn val_to_string(&self, value: Vec<u8>) -> String {{
         match self {{
             {",\n     ".join(get_string_metric_matches_rs(metric_types))},
             {get_default_metric_match_rs()}
