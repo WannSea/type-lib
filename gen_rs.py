@@ -61,6 +61,14 @@ impl TryFrom<u8> for {RUST_ENUM_NAME} {{
 }}
 
 impl {RUST_ENUM_NAME} {{
+    pub fn val_f32(value: f32) -> Vec<u8> {{
+        value.to_ne_bytes().to_vec()
+    }}
+
+    pub fn val_str(value: &str) -> Vec<u8> {{
+        value.as_bytes().to_vec()
+    }}
+
     // transform enum value to string representation
     pub fn val_to_string(&self, value: Vec<u8>) -> String {{
         match self {{
