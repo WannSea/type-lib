@@ -6,20 +6,16 @@ RUST_OUT = "./rust/src/types.rs"
 RUST_ENUM_NAME = "Metric"
 CARGO_TOML = "./rust/Cargo.toml"
 
-def get_string_metric_matches_rs(metric_types: list[ParsedMetric]):
-    return map(lambda x: f"{RUST_ENUM_NAME}::{x.get_camel_case_name()} => String::from_utf8(value).unwrap()", filter(lambda x: x.is_str, metric_types))
-
-def get_default_metric_match_rs():
-    return "_ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()"
-
+def get_metric_enum(metric):
+    return f"{RUST_ENUM_NAME}::{metric}"
 
 def gen_rs(metric_types: list[ParsedMetric]):
 
     metrics = [x.get_camel_case_name() for x in metric_types]
     metric_values = [f"{metrics[i]} = {i}" for i in range(len(metric_types))]
 
-    match_str_metrics = map(lambda x: f"\"{x}\" => Ok({RUST_ENUM_NAME}::{x})", metrics)
-    match_int_metrics = [f"{i} => Ok({RUST_ENUM_NAME}::{metrics[i]})" for i in range(len(metrics))]
+    match_str_metrics = map(lambda x: f"\"{x}\" => Ok({get_metric_enum(x)})", metrics)
+    match_int_metrics = [f"{i} => Ok({get_metric_enum(metrics[i])})" for i in range(len(metrics))]
 
     out = f"""use std::fmt;
 use std::convert::TryFrom;
@@ -62,18 +58,26 @@ impl TryFrom<u8> for {RUST_ENUM_NAME} {{
 
 impl {RUST_ENUM_NAME} {{
     pub fn val_f32(value: f32) -> Vec<u8> {{
-        value.to_ne_bytes().to_vec()
+        value.to_be_bytes().to_vec()
     }}
 
     pub fn val_str(value: &str) -> Vec<u8> {{
         value.as_bytes().to_vec()
     }}
 
-    // transform enum value to string representation
-    pub fn val_to_string(&self, value: Vec<u8>) -> String {{
+    pub fn to_f32(value: Vec<u8>) -> f32 {{
+        f32::from_ne_bytes(value[0..4].try_into().unwrap())
+    }}
+
+    pub fn to_string(value: Vec<u8>) -> String {{
+        String::from_utf8(value).unwrap()
+    }}
+
+    // transform enum value to json
+    pub fn get_val_as_json(&self, value: Vec<u8>) -> String {{
         match self {{
-            {",\n     ".join(get_string_metric_matches_rs(metric_types))},
-            {get_default_metric_match_rs()}
+            {",\n".join(map(lambda x: f"""{get_metric_enum(x.get_camel_case_name())} => format!("\\"{{}}\\"", Self::to_string(value))""", filter(lambda x: x.is_str, metric_types)))},
+            _ => Self::to_f32(value).to_string()
         }}
     }}
 }}

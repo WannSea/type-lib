@@ -378,18 +378,26 @@ impl TryFrom<u8> for Metric {
 
 impl Metric {
     pub fn val_f32(value: f32) -> Vec<u8> {
-        value.to_ne_bytes().to_vec()
+        value.to_be_bytes().to_vec()
     }
 
     pub fn val_str(value: &str) -> Vec<u8> {
         value.as_bytes().to_vec()
     }
 
+    pub fn to_f32(value: Vec<u8>) -> f32 {
+        f32::from_ne_bytes(value[0..4].try_into().unwrap())
+    }
+
+    pub fn to_string(value: Vec<u8>) -> String {
+        String::from_utf8(value).unwrap()
+    }
+
     // transform enum value to string representation
-    pub fn val_to_string(&self, value: Vec<u8>) -> String {
+    pub fn get_val_as_json(&self, value: Vec<u8>) -> String {
         match self {
-            Metric::CellularNetworkMode => String::from_utf8(value).unwrap(),
-            _ => f32::from_ne_bytes(value[0..4].try_into().unwrap()).to_string()
+            Metric::CellularNetworkMode => format!("\"{}\"", Self::to_string(value)),
+            _ => Self::to_f32(value).to_string()
         }
     }
 }
