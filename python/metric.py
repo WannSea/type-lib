@@ -121,4 +121,4 @@ def get_metric_val(id, val):
     if id == Metric.CELLULAR_NETWORK_MODE:
         return val.decode("utf-8")
     else:
-        return struct.unpack('<f', val)[0]
+        return struct.unpack('>f', val)[0]

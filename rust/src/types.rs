@@ -393,7 +393,7 @@ impl Metric {
         String::from_utf8(value).unwrap()
     }
 
-    // transform enum value to string representation
+    // transform enum value to json
     pub fn get_val_as_json(&self, value: Vec<u8>) -> String {
         match self {
             Metric::CellularNetworkMode => format!("\"{}\"", Self::to_string(value)),

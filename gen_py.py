@@ -15,7 +15,7 @@ METRIC_TYPE_VALUES =  {{value: name for name, value in vars(Metric).items() if n
 def get_metric_val(id, val):
     {"\n".join([f"if id == Metric.{x.name}:\n        return val.decode(\"utf-8\")" for x in filter(lambda x: x.is_str, metric_types)])}
     else:
-        return struct.unpack('<f', val)[0]
+        return struct.unpack('>f', val)[0]
 """
 
     with open(PY_OUT, "r") as f:
