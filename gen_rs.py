@@ -66,7 +66,7 @@ impl {RUST_ENUM_NAME} {{
     }}
 
     pub fn to_f32(value: Vec<u8>) -> f32 {{
-        f32::from_ne_bytes(value[0..4].try_into().unwrap())
+        f32::from_be_bytes(value[0..4].try_into().unwrap())
     }}
 
     pub fn to_string(value: Vec<u8>) -> String {{
