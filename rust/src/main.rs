@@ -16,7 +16,9 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
     let metric_ids_enum = scope.new_enum(METRIC_ID_ENUM)
     .allow("non_camel_case_types")
     .vis("pub")
-    .derive("EnumString");
+    .derive("EnumString")
+    .derive("Clone")
+    .derive("Copy");
     for (idx, metric) in d.metrics.iter().enumerate() {
         metric_ids_enum.new_variant(format!("{} = {}", metric.name, idx));
     }

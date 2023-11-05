@@ -2,7 +2,7 @@ use super::MetricType;
 use strum_macros::EnumString;
 
 #[allow(non_camel_case_types)]
-#[derive(EnumString)]
+#[derive(EnumString, Clone, Copy)]
 pub enum MetricId {
     GPS_LON = 0,
     GPS_LAT = 1,

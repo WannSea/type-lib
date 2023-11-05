@@ -3,8 +3,10 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use config::generated::MetricId;
 
+#[derive(Clone)]
 pub struct MetricByteValue(Vec<u8>);
 
+#[derive(Clone)]
 pub struct MetricMessage {
     ts: u128,
     id: MetricId,
