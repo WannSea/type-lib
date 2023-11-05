@@ -1,4 +1,6 @@
 pub mod config;
+use std::time::{SystemTime, UNIX_EPOCH};
+
 use config::generated::MetricId;
 
 pub struct MetricByteValue(Vec<u8>);
@@ -18,6 +20,12 @@ impl Into<MetricByteValue> for f32 {
 impl Into<MetricByteValue> for String {
     fn into(self) -> MetricByteValue {
         MetricByteValue(self.as_bytes().to_vec())
+    }
+}
+
+impl MetricMessage {
+    pub fn now(id: MetricId, data: MetricByteValue) -> Self {
+        MetricMessage { id, data, ts: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() }
     }
 }
 

@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 codegen = "0.2.0"
-serde = { version = "1.0.189", features = ["std", "derive"] }
+serde = { version = "1.0.190", features = ["std", "derive"] }
 serde_yaml = "0.9.27"
 strum = "0.25.0"
 strum_macros = "0.25.3"
