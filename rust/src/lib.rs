@@ -23,6 +23,7 @@ impl MetricMessage {
             MetricType::u8 => u8::from(self.data.clone()).to_string(),
             MetricType::i16 => i16::from(self.data.clone()).to_string(),
             MetricType::u16 => u16::from(self.data.clone()).to_string(),
+            MetricType::u64 => u64::from(self.data.clone()).to_string(),
         }
     }
 

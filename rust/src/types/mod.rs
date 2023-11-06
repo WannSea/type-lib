@@ -17,19 +17,25 @@ impl From<u8> for MetricByteValue {
 
 impl From<u16> for MetricByteValue {
     fn from(value: u16) -> Self {
-        MetricByteValue(value.to_le_bytes().to_vec())
+        MetricByteValue(value.to_be_bytes().to_vec())
     }
 }
 
 impl From<i16> for MetricByteValue {
     fn from(value: i16) -> Self {
-        MetricByteValue(value.to_le_bytes().to_vec())
+        MetricByteValue(value.to_be_bytes().to_vec())
     }
 }
 
 impl From<f32> for MetricByteValue {
     fn from(value: f32) -> Self {
-        MetricByteValue(value.to_le_bytes().to_vec())
+        MetricByteValue(value.to_be_bytes().to_vec())
+    }
+}
+
+impl From<u64> for MetricByteValue {
+    fn from(value: u64) -> Self {
+        MetricByteValue(value.to_be_bytes().to_vec())
     }
 }
 
@@ -55,19 +61,25 @@ impl From<MetricByteValue> for u8 {
 
 impl From<MetricByteValue> for u16 {
     fn from(value: MetricByteValue) -> Self {
-        u16::from_le_bytes(value.0[0..2].try_into().unwrap())
+        u16::from_be_bytes(value.0[0..2].try_into().unwrap())
     }
 }
 
 impl From<MetricByteValue> for i16 {
     fn from(value: MetricByteValue) -> Self {
-        i16::from_le_bytes(value.0[0..2].try_into().unwrap())
+        i16::from_be_bytes(value.0[0..2].try_into().unwrap())
     }
 }
 
 impl From<MetricByteValue> for f32 {
     fn from(value: MetricByteValue) -> Self {
-        f32::from_le_bytes(value.0[0..4].try_into().unwrap())
+        f32::from_be_bytes(value.0[0..4].try_into().unwrap())
+    }
+}
+
+impl From<MetricByteValue> for u64 {
+    fn from(value: MetricByteValue) -> Self {
+        u64::from_be_bytes(value.0[0..8].try_into().unwrap())
     }
 }
 
