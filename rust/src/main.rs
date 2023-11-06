@@ -11,10 +11,12 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
 
     let mut scope = Scope::new();
     scope.import("super", "MetricType");
+    scope.import("strum_macros", "EnumString");
 
     let metric_ids_enum = scope.new_enum(METRIC_ID_ENUM)
     .allow("non_camel_case_types")
     .vis("pub")
+    .derive("EnumString")
     .derive("Clone")
     .derive("Debug")
     .derive("Copy");
