@@ -25,7 +25,7 @@ metrics:
   - { name: MPMU_TEMP, type: f32, description: "MPMU Temperature", unit: "° C" }
   - { name: MOTOR_CURRENT, type: f32, description: "Measured Motor Current", unit: "A" }
   - { name: BATTERY_VOLTAGE, type: f32, description: "Measured Battery Voltage", unit: "V" }
-  - { name: FAN_1, type: f32 }
+  - { name: FAN_1, type: f32, description: "Fan 1 RPM" }
   - { name: FAN_2, type: f32 }
   - { name: FAN_3, type: f32 }
   - { name: FAN_4, type: f32 }
