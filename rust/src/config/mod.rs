@@ -1,6 +1,8 @@
+use core::fmt;
+
 pub mod generated;
 
-#[derive(Debug, serde::Deserialize, PartialEq, strum_macros::Display)]
+#[derive(Debug, serde::Deserialize, PartialEq)]
 #[allow(non_camel_case_types)]
 pub enum MetricType {
     String,
@@ -17,4 +19,10 @@ pub struct MetricDefinition {
 #[derive(Debug, serde::Deserialize, PartialEq)]
 pub struct Config {
     pub metrics: Vec<MetricDefinition>
+}
+
+impl fmt::Display for MetricType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }

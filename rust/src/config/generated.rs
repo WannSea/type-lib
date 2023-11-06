@@ -1,5 +1,4 @@
 use super::MetricType;
-use strum_macros::EnumString;
 
 #[allow(non_camel_case_types)]
 #[derive(EnumString, Clone, Debug, Copy)]

@@ -1,7 +1,10 @@
 pub mod config;
+use core::fmt;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use config::generated::MetricId;
+
+use crate::config::MetricType;
 
 #[derive(Clone, Debug)]
 pub struct MetricByteValue(Vec<u8>);
@@ -12,6 +15,16 @@ pub struct MetricMessage {
     id: MetricId,
     data: MetricByteValue
 }
+
+impl fmt::Display for MetricId {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
+}
+
+
+
+// FROM NATIVE TYPES TO BYTES
 
 impl Into<MetricByteValue> for Vec<u8> {
     fn into(self) -> MetricByteValue {
@@ -31,9 +44,39 @@ impl Into<MetricByteValue> for String {
     }
 }
 
+// FROM BYTES TO RUST DATA
+
+impl From<MetricByteValue> for Vec<u8> {
+    fn from(value: MetricByteValue) -> Self {
+        value.0
+    }
+}
+
+impl From<MetricByteValue> for f32 {
+    fn from(value: MetricByteValue) -> Self {
+        f32::from_le_bytes(value.0[0..4].try_into().unwrap())
+    }
+}
+
+impl From<MetricByteValue> for String {
+    fn from(value: MetricByteValue) -> Self {
+        String::from_utf8(value.0).unwrap()
+    }
+}
+
 impl MetricMessage {
     pub fn now(id: MetricId, data: MetricByteValue) -> Self {
         MetricMessage { id, data, ts: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() }
+    }
+
+
+
+    pub fn get_json_repr(&self) -> String {
+        let json_val: String = match self.id.get_type() {
+            MetricType::String => self.data.clone().into(),
+            MetricType::f32 => self.data.clone().into()
+        };
+        format!("{{ ts: {}, id: {}, data: {} }}", self.ts, self.id.to_string(), json_val)
     }
 }
 
