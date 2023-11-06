@@ -34,19 +34,19 @@
 |   GLOBAL_IBMS_ALARM_STATE   |  u8  |                        Global alert status: None (0), Minor (1), Major (2)                        |         |
 |   NUMBER_OF_CONNECTED_BMS   |  u8  |                          Number of battery packs connected to the DC bus                          |         |
 |     POWERBUS_INFORMATION    |  u8  |    Powerbus information: All child BMS connected (0), At least one child BMS not connected (1)    |         |
-|           BAT_TMIN          |  f32 |                                                                                                   |         |
-|           BAT_TMAX          |  f32 |                                                                                                   |         |
-|         BAT_ID_TMIN         |  f32 |                                                                                                   |         |
-|         BAT_ID_TMAX         |  f32 |                                                                                                   |         |
-|           BAT_VMIN          |  f32 |                                                                                                   |         |
-|           BAT_VMAX          |  f32 |                                                                                                   |         |
-|         BAT_ID_VMIN         |  f32 |                                                                                                   |         |
-|         BAT_ID_VMAX         |  f32 |                                                                                                   |         |
-|      GLOBAL_BAT_CURRENT     |  f32 |                                                                                                   |         |
-|       GLOBAL_CELL_MIN       |  f32 |                                                                                                   |         |
-|       GLOBAL_CELL_MAX       |  f32 |                                                                                                   |         |
-|      GLOBAL_CELL_MIN_ID     |  f32 |                                                                                                   |         |
-|      GLOBAL_CELL_MAX_ID     |  f32 |                                                                                                   |         |
+|           BAT_TMIN          |  u8  |                Minimum temperature among all the BMS communicating on the CAN bus.                |    °C   |
+|           BAT_TMAX          |  u8  |                Maximum temperature among all the BMS communicating on the CAN bus.                |    °C   |
+|         BAT_ID_TMIN         |  u8  |                            ID of the BMS with the minimum temperature.                            |    -    |
+|         BAT_ID_TMAX         |  u8  |                            ID of the BMS with the maximum temperature.                            |    -    |
+|           BAT_VMIN          |  u16 |              Minimum battery voltage among all the BMS communicating on the CAN bus.              |    V    |
+|           BAT_VMAX          |  u16 |              Maximum battery voltage among all the BMS communicating on the CAN bus.              |    V    |
+|         BAT_ID_VMIN         |  u8  |                          ID of the BMS with the minimum battery voltage.                          |    -    |
+|         BAT_ID_VMAX         |  u8  |                          ID of the BMS with the maximum battery voltage.                          |    -    |
+|      GLOBAL_BAT_CURRENT     |  i16 |           Sum of the current flowing through all the modules connected to the power bus.          |    A    |
+|      GLOBAL_CELL_V_MIN      |  i16 |              Minimum cell voltage among all the modules communicating on the CAN bus.             |    mV   |
+|      GLOBAL_CELL_V_MAX      |  i16 |              Maximum cell voltage among all the modules communicating on the CAN bus.             |    mV   |
+|     GLOBAL_CELL_V_MIN_ID    |  u8  |                          ID of the battery with the minimum cell voltage.                         |    -    |
+|     GLOBAL_CELL_V_MAX_ID    |  u8  |                          ID of the battery with the maximum cell voltage                          |    -    |
 |          BAT_1_U_1          |  u16 |                       Battery 1: Cell 1 voltage measurement (on the module)                       |    mV   |
 |          BAT_1_U_2          |  u16 |                       Battery 1: Cell 2 voltage measurement (on the module)                       |    mV   |
 |          BAT_1_U_3          |  u16 |                       Battery 1: Cell 3 voltage measurement (on the module)                       |    mV   |
