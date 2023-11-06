@@ -4,7 +4,7 @@ pub mod config;
 static METRIC_ID_ENUM: &str = "MetricId";
 use crate::config::Config;
 
-
+// ToDo: move to build script
 fn main()  -> Result<(), Box<dyn std::error::Error>> {
     let f = std::fs::File::open("../metrics.yaml")?;
     let d: Config = serde_yaml::from_reader(f)?;
@@ -15,7 +15,6 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
     let metric_ids_enum = scope.new_enum(METRIC_ID_ENUM)
     .allow("non_camel_case_types")
     .vis("pub")
-    .derive("EnumString")
     .derive("Clone")
     .derive("Debug")
     .derive("Copy");
