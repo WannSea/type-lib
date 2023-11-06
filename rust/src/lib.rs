@@ -13,6 +13,11 @@ pub struct MetricMessage {
     data: MetricByteValue
 }
 
+impl Into<MetricByteValue> for Vec<u8> {
+    fn into(self) -> MetricByteValue {
+        MetricByteValue(self)
+    }
+}
 
 impl Into<MetricByteValue> for f32 {
     fn into(self) -> MetricByteValue {
