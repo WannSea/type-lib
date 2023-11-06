@@ -21,7 +21,7 @@
 |          MPMU_TEMP          |  f32 |             MPMU Temperature            | ° C|
 |        MOTOR_CURRENT        |  f32 |          Measured Motor Current         |  A |
 |       BATTERY_VOLTAGE       |  f32 |         Measured Battery Voltage        |  V |
-|            FAN_1            |  f32 |                                         |    |
+|            FAN_1            |  f32 |                Fan 1 RPM                |    |
 |            FAN_2            |  f32 |                                         |    |
 |            FAN_3            |  f32 |                                         |    |
 |            FAN_4            |  f32 |                                         |    |
