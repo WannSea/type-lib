@@ -20,8 +20,9 @@ impl MetricMessage {
         match self.id.get_type() {
             MetricType::String => format!("\"{}\"", String::from(self.data.clone())),
             MetricType::f32 => f32::from(self.data.clone()).to_string(),
-            MetricType::u8 => todo!(),
-            MetricType::i16 => todo!(),
+            MetricType::u8 => u8::from(self.data.clone()).to_string(),
+            MetricType::i16 => i16::from(self.data.clone()).to_string(),
+            MetricType::u16 => u16::from(self.data.clone()).to_string(),
         }
     }
 

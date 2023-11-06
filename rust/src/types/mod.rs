@@ -15,6 +15,12 @@ impl From<u8> for MetricByteValue {
     }
 }
 
+impl From<u16> for MetricByteValue {
+    fn from(value: u16) -> Self {
+        MetricByteValue(value.to_le_bytes().to_vec())
+    }
+}
+
 impl From<i16> for MetricByteValue {
     fn from(value: i16) -> Self {
         MetricByteValue(value.to_le_bytes().to_vec())
@@ -44,6 +50,12 @@ impl From<MetricByteValue> for Vec<u8> {
 impl From<MetricByteValue> for u8 {
     fn from(value: MetricByteValue) -> Self {
         value.0[0]
+    }
+}
+
+impl From<MetricByteValue> for u16 {
+    fn from(value: MetricByteValue) -> Self {
+        u16::from_le_bytes(value.0[0..2].try_into().unwrap())
     }
 }
 
