@@ -17,8 +17,8 @@
 |          ROTATION_X         |  f32 |                                            Fused Rotation in X-axis                                            |     °    |
 |          ROTATION_Y         |  f32 |                                            Fused Rotation in Y-axis                                            |     °    |
 |          ROTATION_Z         |  f32 |                                            Fused Rotation in Z-axis                                            |     °    |
-|          APMU_TEMP          |  f32 |                                                APMU Temperature                                                |    ° C   |
-|          MPMU_TEMP          |  f32 |                                                MPMU Temperature                                                |    ° C   |
+|          APMU_TEMP          |  f32 |                                                APMU Temperature                                                |    °C    |
+|          MPMU_TEMP          |  f32 |                                                MPMU Temperature                                                |    °C    |
 |        MOTOR_CURRENT        |  f32 |                                             Measured Motor Current                                             |     A    |
 |       BATTERY_VOLTAGE       |  f32 |                                            Measured Battery Voltage                                            |     V    |
 |            FAN_1            |  f32 |                                                    Fan 1 RPM                                                   |    RPM   |
@@ -26,7 +26,7 @@
 |            FAN_3            |  f32 |                                                    Fan 3 RPM                                                   |    RPM   |
 |            FAN_4            |  f32 |                                                    Fan 4 RPM                                                   |    RPM   |
 |         SOLAR_POWER         |  f32 |                                                   Solar Power                                                  |     W    |
-|          SOLAR_TEMP         |  f32 |                                                MPPT Temperature                                                |    ° C   |
+|          SOLAR_TEMP         |  f32 |                                                MPPT Temperature                                                |    °C    |
 |MAX_BATTERY_DISCHARGE_CURRENT|  i16 |                                        Maximum Battery Discharge Current                                       |     A    |
 | MAX_BATTERY_RECHARGE_CURRENT|  i16 |                                        Maximum Battery Recharge Current                                        |     A    |
 |          GLOBAL_SOC         |  u8  |       Global SOC of the system calculated from the SOC of all the batteries connected to the DC power bus      |     %    |
