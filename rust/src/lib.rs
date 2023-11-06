@@ -2,9 +2,7 @@ pub mod config;
 use core::fmt;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use config::generated::MetricId;
-
-use crate::config::MetricType;
+include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
 
 #[derive(Clone, Debug)]
 pub struct MetricByteValue(Vec<u8>);
@@ -22,10 +20,7 @@ impl fmt::Display for MetricId {
     }
 }
 
-
-
 // FROM NATIVE TYPES TO BYTES
-
 impl Into<MetricByteValue> for Vec<u8> {
     fn into(self) -> MetricByteValue {
         MetricByteValue(self)
@@ -45,7 +40,6 @@ impl Into<MetricByteValue> for String {
 }
 
 // FROM BYTES TO RUST DATA
-
 impl From<MetricByteValue> for Vec<u8> {
     fn from(value: MetricByteValue) -> Self {
         value.0
@@ -68,8 +62,6 @@ impl MetricMessage {
     pub fn now(id: MetricId, data: MetricByteValue) -> Self {
         MetricMessage { id, data, ts: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() }
     }
-
-
 
     pub fn get_json_repr(&self) -> String {
         let json_val: String = match self.id.get_type() {
