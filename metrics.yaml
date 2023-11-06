@@ -65,18 +65,18 @@ metrics:
   - { name: BAT_1_U_12, type: u16, description: "Battery 1: Cell 12 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_1_U_13, type: u16, description: "Battery 1: Cell 13 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_1_U_14, type: u16, description: "Battery 1: Cell 14 voltage measurement (on the module)", unit: "mV" }
-  - { name: BAT_1_AH_DISCHARGED, type: f32 }
-  - { name: BAT_1_SOC, type: f32 }
-  - { name: BAT_1_SOH, type: f32 }
-  - { name: BAT_1_I_BAT_I, type: f32 }
-  - { name: BAT_1_REMAINING_CAPACITY, type: f32 }
-  - { name: BAT_1_T0, type: f32 }
-  - { name: BAT_1_T1, type: f32 }
-  - { name: BAT_1_T2, type: f32 }
-  - { name: BAT_1_MAJOR_ALERT_1, type: f32 }
-  - { name: BAT_1_MAJOR_ALERT_2, type: f32 }
-  - { name: BAT_1_MAJOR_ALERT_3, type: f32 }
-  - { name: BAT_1_MINOR_ALERT, type: f32 }
+  - { name: BAT_1_AH_DISCHARGED, type: u16, description: "Battery 1: Discharged Ah counter.", unit: "Ah" }
+  - { name: BAT_1_REMAINING_CAPACITY, type: u16, description: "Battery 1: Remaining battery capacity.", unit: "Ah" }
+  - { name: BAT_1_SOH, type: u8, description: "Battery 1: State of Health", unit: "%" }
+  - { name: BAT_1_SOC, type: u8, description: "Battery 1: State of Charge", unit: "%" }
+  - { name: BAT_1_I_BAT_I, type: u16, description: "Battery 1: Absolute value of the current flowing through the battery.", unit: "A" }
+  - { name: BAT_1_T0, type: u8, description: "Battery 1: Sensor 1 temperature measurement", unit: "°C" }
+  - { name: BAT_1_T1, type: u8, description: "Battery 1: Sensor 2 temperature measurement", unit: "°C" }
+  - { name: BAT_1_T2, type: u8, description: "Battery 1: Sensor 3 temperature measurement", unit: "°C" }
+  - { name: BAT_1_MAJOR_ALERT_1, type: u8, description: "Battery 1: Major Alerts 1", unit: "Unknown 😭" }
+  - { name: BAT_1_MAJOR_ALERT_2, type: u8, description: "Battery 1: Major Alerts 2", unit: "Unknown 😭" }
+  - { name: BAT_1_MAJOR_ALERT_3, type: u8, description: "Battery 1: Major Alerts 3", unit: "Unknown 😭" }
+  - { name: BAT_1_MINOR_ALERT, type: u8, description: "Battery 1: Minor Alerts", unit: "Unknown 😭" }
   - { name: BAT_2_U_1, type: u16, description: "Battery 2: Cell 1 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_2_U_2, type: u16, description: "Battery 2: Cell 2 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_2_U_3, type: u16, description: "Battery 2: Cell 3 voltage measurement (on the module)", unit: "mV" }
@@ -91,18 +91,18 @@ metrics:
   - { name: BAT_2_U_12, type: u16, description: "Battery 2: Cell 12 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_2_U_13, type: u16, description: "Battery 2: Cell 13 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_2_U_14, type: u16, description: "Battery 2: Cell 14 voltage measurement (on the module)", unit: "mV" }
-  - { name: BAT_2_AH_DISCHARGED, type: f32 }
-  - { name: BAT_2_SOC, type: f32 }
-  - { name: BAT_2_SOH, type: f32 }
-  - { name: BAT_2_I_BAT_I, type: f32 }
-  - { name: BAT_2_REMAINING_CAPACITY, type: f32 }
-  - { name: BAT_2_T0, type: f32 }
-  - { name: BAT_2_T1, type: f32 }
-  - { name: BAT_2_T2, type: f32 }
-  - { name: BAT_2_MAJOR_ALERT_1, type: f32 }
-  - { name: BAT_2_MAJOR_ALERT_2, type: f32 }
-  - { name: BAT_2_MAJOR_ALERT_3, type: f32 }
-  - { name: BAT_2_MINOR_ALERT, type: f32 }
+  - { name: BAT_2_AH_DISCHARGED, type: u16, description: "Battery 2: Discharged Ah counter.", unit: "Ah" }
+  - { name: BAT_2_REMAINING_CAPACITY, type: u16, description: "Battery 2: Remaining battery capacity.", unit: "Ah" }
+  - { name: BAT_2_SOH, type: u8, description: "Battery 2: State of Health", unit: "%" }
+  - { name: BAT_2_SOC, type: u8, description: "Battery 2: State of Charge", unit: "%" }
+  - { name: BAT_2_I_BAT_I, type: u16, description: "Battery 2: Absolute value of the current flowing through the battery.", unit: "A" }
+  - { name: BAT_2_T0, type: u8, description: "Battery 2: Sensor 1 temperature measurement", unit: "°C" }
+  - { name: BAT_2_T1, type: u8, description: "Battery 2: Sensor 2 temperature measurement", unit: "°C" }
+  - { name: BAT_2_T2, type: u8, description: "Battery 2: Sensor 3 temperature measurement", unit: "°C" }
+  - { name: BAT_2_MAJOR_ALERT_1, type: u8, description: "Battery 2: Major Alerts 1", unit: "Unknown 😭" }
+  - { name: BAT_2_MAJOR_ALERT_2, type: u8, description: "Battery 2: Major Alerts 2", unit: "Unknown 😭" }
+  - { name: BAT_2_MAJOR_ALERT_3, type: u8, description: "Battery 2: Major Alerts 3", unit: "Unknown 😭" }
+  - { name: BAT_2_MINOR_ALERT, type: u8, description: "Battery 2: Minor Alerts", unit: "Unknown 😭" }
   - { name: BAT_3_U_1, type: u16, description: "Battery 3: Cell 1 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_3_U_2, type: u16, description: "Battery 3: Cell 2 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_3_U_3, type: u16, description: "Battery 3: Cell 3 voltage measurement (on the module)", unit: "mV" }
@@ -117,18 +117,18 @@ metrics:
   - { name: BAT_3_U_12, type: u16, description: "Battery 3: Cell 12 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_3_U_13, type: u16, description: "Battery 3: Cell 13 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_3_U_14, type: u16, description: "Battery 3: Cell 14 voltage measurement (on the module)", unit: "mV" }
-  - { name: BAT_3_AH_DISCHARGED, type: f32 }
-  - { name: BAT_3_SOC, type: f32 }
-  - { name: BAT_3_SOH, type: f32 }
-  - { name: BAT_3_I_BAT_I, type: f32 }
-  - { name: BAT_3_REMAINING_CAPACITY, type: f32 }
-  - { name: BAT_3_T0, type: f32 }
-  - { name: BAT_3_T1, type: f32 }
-  - { name: BAT_3_T2, type: f32 }
-  - { name: BAT_3_MAJOR_ALERT_1, type: f32 }
-  - { name: BAT_3_MAJOR_ALERT_2, type: f32 }
-  - { name: BAT_3_MAJOR_ALERT_3, type: f32 }
-  - { name: BAT_3_MINOR_ALERT, type: f32 }
+  - { name: BAT_3_AH_DISCHARGED, type: u16, description: "Battery 3: Discharged Ah counter.", unit: "Ah" }
+  - { name: BAT_3_REMAINING_CAPACITY, type: u16, description: "Battery 3: Remaining battery capacity.", unit: "Ah" }
+  - { name: BAT_3_SOH, type: u8, description: "Battery 3: State of Health", unit: "%" }
+  - { name: BAT_3_SOC, type: u8, description: "Battery 3: State of Charge", unit: "%" }
+  - { name: BAT_3_I_BAT_I, type: u16, description: "Battery 3: Absolute value of the current flowing through the battery.", unit: "A" }
+  - { name: BAT_3_T0, type: u8, description: "Battery 3: Sensor 1 temperature measurement", unit: "°C" }
+  - { name: BAT_3_T1, type: u8, description: "Battery 3: Sensor 2 temperature measurement", unit: "°C" }
+  - { name: BAT_3_T2, type: u8, description: "Battery 3: Sensor 3 temperature measurement", unit: "°C" }
+  - { name: BAT_3_MAJOR_ALERT_1, type: u8, description: "Battery 3: Major Alerts 1", unit: "Unknown 😭" }
+  - { name: BAT_3_MAJOR_ALERT_2, type: u8, description: "Battery 3: Major Alerts 2", unit: "Unknown 😭" }
+  - { name: BAT_3_MAJOR_ALERT_3, type: u8, description: "Battery 3: Major Alerts 3", unit: "Unknown 😭" }
+  - { name: BAT_3_MINOR_ALERT, type: u8, description: "Battery 3: Minor Alerts", unit: "Unknown 😭" }
   - { name: MEM_USED_MB, type: f32 }
   - { name: MEM_TOTAL, type: f32 }
   - { name: SWAP_USED_MB, type: f32 }
