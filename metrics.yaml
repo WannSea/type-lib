@@ -38,19 +38,19 @@ metrics:
   - { name: GLOBAL_IBMS_ALARM_STATE, type: u8, description: "Global alert status: None (0), Minor (1), Major (2)" }
   - { name: NUMBER_OF_CONNECTED_BMS, type: u8, description: "Number of battery packs connected to the DC bus" }
   - { name: POWERBUS_INFORMATION, type: u8, description: "Powerbus information: All child BMS connected (0), At least one child BMS not connected (1)" }
-  - { name: BAT_TMIN, type: f32 }
-  - { name: BAT_TMAX, type: f32 }
-  - { name: BAT_ID_TMIN, type: f32 }
-  - { name: BAT_ID_TMAX, type: f32 }
-  - { name: BAT_VMIN, type: f32 }
-  - { name: BAT_VMAX, type: f32 }
-  - { name: BAT_ID_VMIN, type: f32 }
-  - { name: BAT_ID_VMAX, type: f32 }
-  - { name: GLOBAL_BAT_CURRENT, type: f32 }
-  - { name: GLOBAL_CELL_MIN, type: f32 }
-  - { name: GLOBAL_CELL_MAX, type: f32 }
-  - { name: GLOBAL_CELL_MIN_ID, type: f32 }
-  - { name: GLOBAL_CELL_MAX_ID, type: f32 }
+  - { name: BAT_TMIN, type: u8, description: "Minimum temperature among all the BMS communicating on the CAN bus.", unit: "°C" }
+  - { name: BAT_TMAX, type: u8, description: "Maximum temperature among all the BMS communicating on the CAN bus.", unit: "°C" }
+  - { name: BAT_ID_TMIN, type: u8, description: "ID of the BMS with the minimum temperature.", unit: "-" }
+  - { name: BAT_ID_TMAX, type: u8, description: "ID of the BMS with the maximum temperature.", unit: "-" }
+  - { name: BAT_VMIN, type: u16, description: "Minimum battery voltage among all the BMS communicating on the CAN bus.", unit: "V" }
+  - { name: BAT_VMAX, type: u16, description: "Maximum battery voltage among all the BMS communicating on the CAN bus.", unit: "V" }
+  - { name: BAT_ID_VMIN, type: u8, description: "ID of the BMS with the minimum battery voltage.", unit: "-" }
+  - { name: BAT_ID_VMAX, type: u8, description: "ID of the BMS with the maximum battery voltage.", unit: "-" }
+  - { name: GLOBAL_BAT_CURRENT, type: i16, description: "Sum of the current flowing through all the modules connected to the power bus.", unit: "A" }
+  - { name: GLOBAL_CELL_V_MIN, type: i16, description: "Minimum cell voltage among all the modules communicating on the CAN bus.", unit: "mV" }
+  - { name: GLOBAL_CELL_V_MAX, type: i16, description: "Maximum cell voltage among all the modules communicating on the CAN bus.", unit: "mV" }
+  - { name: GLOBAL_CELL_V_MIN_ID, type: u8, description: "ID of the battery with the minimum cell voltage.", unit: "-" }
+  - { name: GLOBAL_CELL_V_MAX_ID, type: u8, description: "ID of the battery with the maximum cell voltage", unit: "-" }
   - { name: BAT_1_U_1, type: u16, description: "Battery 1: Cell 1 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_1_U_2, type: u16, description: "Battery 1: Cell 2 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_1_U_3, type: u16, description: "Battery 1: Cell 3 voltage measurement (on the module)", unit: "mV" }
