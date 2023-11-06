@@ -21,22 +21,14 @@
 |          MPMU_TEMP          |  f32 |             MPMU Temperature            | ° C|
 |        MOTOR_CURRENT        |  f32 |          Measured Motor Current         |  A |
 |       BATTERY_VOLTAGE       |  f32 |         Measured Battery Voltage        |  V |
-|            FAN_1            |  f32 |                Fan 1 RPM                |    |
-|            FAN_2            |  f32 |                                         |    |
-|            FAN_3            |  f32 |                                         |    |
-|            FAN_4            |  f32 |                                         |    |
-|         SOLAR_POWER         |  f32 |                                         |    |
-|          SOLAR_TEMP         |  f32 |                                         |    |
-|          MOTOR_TEMP         |  f32 |                                         |    |
-|     MOTOR_INVERTER_TEMP     |  f32 |                                         |    |
-|    MOTOR_BATTERY_VOLTAGE    |  f32 |                                         |    |
-|          MOTOR_RPM          |  f32 |                                         |    |
-|         MOTOR_POWER         |  f32 |                                         |    |
-|         MOTOR_STATE         |  f32 |                                         |    |
-|      ECU_MOTOR_CURRENT      |  f32 |                                         |    |
-|      MOTOR_THROTTLE_POS     |  f32 |                                         |    |
-|MAX_BATTERY_DISCHARGE_CURRENT|  f32 |                                         |    |
-| MAX_BATTERY_RECHARGE_CURRENT|  f32 |                                         |    |
+|            FAN_1            |  f32 |                Fan 1 RPM                | RPM|
+|            FAN_2            |  f32 |                Fan 2 RPM                | RPM|
+|            FAN_3            |  f32 |                Fan 3 RPM                | RPM|
+|            FAN_4            |  f32 |                Fan 4 RPM                | RPM|
+|         SOLAR_POWER         |  f32 |               Solar Power               |  W |
+|          SOLAR_TEMP         |  f32 |             MPPT Temperature            | ° C|
+|MAX_BATTERY_DISCHARGE_CURRENT|  f32 |    Maximum Battery Discharge Current    |  A |
+| MAX_BATTERY_RECHARGE_CURRENT|  f32 |     Maximum Battery Recharge Current    |  A |
 |          GLOBAL_SOC         |  f32 |                                         |    |
 |        ID_GLOBAL_SOC        |  f32 |                                         |    |
 |   GLOBAL_IBMS_ALARM_STATE   |  f32 |                                         |    |
