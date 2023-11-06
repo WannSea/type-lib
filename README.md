@@ -4,3 +4,8 @@ Defines all common types shared in the different WannSea components as individua
 ## Metrics
 Every metric used in transport is defined in the [metrics.yaml](metrics.yaml)
 A readable overview can be found [here](Metrics.md)
+
+## Rust
+The rust folder contains a cargo library which can be embedded inside Rust projects. 
+It exposes all the defined Metrics including an ID and their corresponding data type.
+This is used for the transport from our boat to the VPS allowing us to reduce data size by using a custom binary protocol, rather than relying on serialization techniques like JSON.
