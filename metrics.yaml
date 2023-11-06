@@ -25,22 +25,14 @@ metrics:
   - { name: MPMU_TEMP, type: f32, description: "MPMU Temperature", unit: "° C" }
   - { name: MOTOR_CURRENT, type: f32, description: "Measured Motor Current", unit: "A" }
   - { name: BATTERY_VOLTAGE, type: f32, description: "Measured Battery Voltage", unit: "V" }
-  - { name: FAN_1, type: f32, description: "Fan 1 RPM" }
-  - { name: FAN_2, type: f32 }
-  - { name: FAN_3, type: f32 }
-  - { name: FAN_4, type: f32 }
-  - { name: SOLAR_POWER, type: f32 }
-  - { name: SOLAR_TEMP, type: f32 }
-  - { name: MOTOR_TEMP, type: f32 }
-  - { name: MOTOR_INVERTER_TEMP, type: f32 }
-  - { name: MOTOR_BATTERY_VOLTAGE, type: f32 }
-  - { name: MOTOR_RPM, type: f32 }
-  - { name: MOTOR_POWER, type: f32 }
-  - { name: MOTOR_STATE, type: f32 }
-  - { name: ECU_MOTOR_CURRENT, type: f32 }
-  - { name: MOTOR_THROTTLE_POS, type: f32 }
-  - { name: MAX_BATTERY_DISCHARGE_CURRENT, type: f32 }
-  - { name: MAX_BATTERY_RECHARGE_CURRENT, type: f32 }
+  - { name: FAN_1, type: f32, description: "Fan 1 RPM", unit: "RPM" }
+  - { name: FAN_2, type: f32, description: "Fan 2 RPM", unit: "RPM" }
+  - { name: FAN_3, type: f32, description: "Fan 3 RPM", unit: "RPM" }
+  - { name: FAN_4, type: f32, description: "Fan 4 RPM", unit: "RPM" }
+  - { name: SOLAR_POWER, type: f32, description: "Solar Power", unit: "W" }
+  - { name: SOLAR_TEMP, type: f32, description: "MPPT Temperature", unit: "° C" }
+  - { name: MAX_BATTERY_DISCHARGE_CURRENT, type: f32, description: "Maximum Battery Discharge Current", unit: "A" }
+  - { name: MAX_BATTERY_RECHARGE_CURRENT, type: f32, description: "Maximum Battery Recharge Current", unit: "A" }
   - { name: GLOBAL_SOC, type: f32 }
   - { name: ID_GLOBAL_SOC, type: f32 }
   - { name: GLOBAL_IBMS_ALARM_STATE, type: f32 }
