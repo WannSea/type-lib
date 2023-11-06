@@ -47,6 +47,20 @@
 |       GLOBAL_CELL_MAX       |  f32 |                                                                                                   |    |
 |      GLOBAL_CELL_MIN_ID     |  f32 |                                                                                                   |    |
 |      GLOBAL_CELL_MAX_ID     |  f32 |                                                                                                   |    |
+|          BAT_1_U_1          |  u16 |                       Battery 1: Cell 1 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_2          |  u16 |                       Battery 1: Cell 2 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_3          |  u16 |                       Battery 1: Cell 3 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_4          |  u16 |                       Battery 1: Cell 4 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_5          |  u16 |                       Battery 1: Cell 5 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_6          |  u16 |                       Battery 1: Cell 6 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_7          |  u16 |                       Battery 1: Cell 7 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_8          |  u16 |                       Battery 1: Cell 8 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_9          |  u16 |                       Battery 1: Cell 9 voltage measurement (on the module)                       | mV |
+|          BAT_1_U_10         |  u16 |                       Battery 1: Cell 10 voltage measurement (on the module)                      | mV |
+|          BAT_1_U_11         |  u16 |                       Battery 1: Cell 11 voltage measurement (on the module)                      | mV |
+|          BAT_1_U_12         |  u16 |                       Battery 1: Cell 12 voltage measurement (on the module)                      | mV |
+|          BAT_1_U_13         |  u16 |                       Battery 1: Cell 13 voltage measurement (on the module)                      | mV |
+|          BAT_1_U_14         |  u16 |                       Battery 1: Cell 14 voltage measurement (on the module)                      | mV |
 |     BAT_1_AH_DISCHARGED     |  f32 |                                                                                                   |    |
 |          BAT_1_SOC          |  f32 |                                                                                                   |    |
 |          BAT_1_SOH          |  f32 |                                                                                                   |    |
@@ -59,6 +73,20 @@
 |     BAT_1_MAJOR_ALERT_2     |  f32 |                                                                                                   |    |
 |     BAT_1_MAJOR_ALERT_3     |  f32 |                                                                                                   |    |
 |      BAT_1_MINOR_ALERT      |  f32 |                                                                                                   |    |
+|          BAT_2_U_1          |  u16 |                       Battery 2: Cell 1 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_2          |  u16 |                       Battery 2: Cell 2 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_3          |  u16 |                       Battery 2: Cell 3 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_4          |  u16 |                       Battery 2: Cell 4 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_5          |  u16 |                       Battery 2: Cell 5 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_6          |  u16 |                       Battery 2: Cell 6 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_7          |  u16 |                       Battery 2: Cell 7 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_8          |  u16 |                       Battery 2: Cell 8 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_9          |  u16 |                       Battery 2: Cell 9 voltage measurement (on the module)                       | mV |
+|          BAT_2_U_10         |  u16 |                       Battery 2: Cell 10 voltage measurement (on the module)                      | mV |
+|          BAT_2_U_11         |  u16 |                       Battery 2: Cell 11 voltage measurement (on the module)                      | mV |
+|          BAT_2_U_12         |  u16 |                       Battery 2: Cell 12 voltage measurement (on the module)                      | mV |
+|          BAT_2_U_13         |  u16 |                       Battery 2: Cell 13 voltage measurement (on the module)                      | mV |
+|          BAT_2_U_14         |  u16 |                       Battery 2: Cell 14 voltage measurement (on the module)                      | mV |
 |     BAT_2_AH_DISCHARGED     |  f32 |                                                                                                   |    |
 |          BAT_2_SOC          |  f32 |                                                                                                   |    |
 |          BAT_2_SOH          |  f32 |                                                                                                   |    |
@@ -71,6 +99,20 @@
 |     BAT_2_MAJOR_ALERT_2     |  f32 |                                                                                                   |    |
 |     BAT_2_MAJOR_ALERT_3     |  f32 |                                                                                                   |    |
 |      BAT_2_MINOR_ALERT      |  f32 |                                                                                                   |    |
+|          BAT_3_U_1          |  u16 |                       Battery 3: Cell 1 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_2          |  u16 |                       Battery 3: Cell 2 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_3          |  u16 |                       Battery 3: Cell 3 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_4          |  u16 |                       Battery 3: Cell 4 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_5          |  u16 |                       Battery 3: Cell 5 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_6          |  u16 |                       Battery 3: Cell 6 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_7          |  u16 |                       Battery 3: Cell 7 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_8          |  u16 |                       Battery 3: Cell 8 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_9          |  u16 |                       Battery 3: Cell 9 voltage measurement (on the module)                       | mV |
+|          BAT_3_U_10         |  u16 |                       Battery 3: Cell 10 voltage measurement (on the module)                      | mV |
+|          BAT_3_U_11         |  u16 |                       Battery 3: Cell 11 voltage measurement (on the module)                      | mV |
+|          BAT_3_U_12         |  u16 |                       Battery 3: Cell 12 voltage measurement (on the module)                      | mV |
+|          BAT_3_U_13         |  u16 |                       Battery 3: Cell 13 voltage measurement (on the module)                      | mV |
+|          BAT_3_U_14         |  u16 |                       Battery 3: Cell 14 voltage measurement (on the module)                      | mV |
 |     BAT_3_AH_DISCHARGED     |  f32 |                                                                                                   |    |
 |          BAT_3_SOC          |  f32 |                                                                                                   |    |
 |          BAT_3_SOH          |  f32 |                                                                                                   |    |
