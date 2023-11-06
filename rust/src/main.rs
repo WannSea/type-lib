@@ -18,6 +18,7 @@ fn main()  -> Result<(), Box<dyn std::error::Error>> {
     .vis("pub")
     .derive("EnumString")
     .derive("Clone")
+    .derive("Debug")
     .derive("Copy");
     for (idx, metric) in d.metrics.iter().enumerate() {
         metric_ids_enum.new_variant(format!("{} = {}", metric.name, idx));
