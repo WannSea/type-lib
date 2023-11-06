@@ -2,7 +2,7 @@ use std::{path::Path, env};
 use codegen::{Scope, Impl, Enum};
 
 static METRIC_ID_ENUM: &str = "MetricId";
-static METRIC_TYPES: &'static [&str] = &["String", "f32"];
+static METRIC_TYPES: &'static [&str] = &["String", "u8", "i16", "f32"];
 
 #[derive(Debug, serde::Deserialize, PartialEq)]
 pub struct MetricDefinition {

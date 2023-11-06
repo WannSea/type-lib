@@ -31,13 +31,13 @@ metrics:
   - { name: FAN_4, type: f32, description: "Fan 4 RPM", unit: "RPM" }
   - { name: SOLAR_POWER, type: f32, description: "Solar Power", unit: "W" }
   - { name: SOLAR_TEMP, type: f32, description: "MPPT Temperature", unit: "° C" }
-  - { name: MAX_BATTERY_DISCHARGE_CURRENT, type: f32, description: "Maximum Battery Discharge Current", unit: "A" }
-  - { name: MAX_BATTERY_RECHARGE_CURRENT, type: f32, description: "Maximum Battery Recharge Current", unit: "A" }
-  - { name: GLOBAL_SOC, type: f32 }
-  - { name: ID_GLOBAL_SOC, type: f32 }
-  - { name: GLOBAL_IBMS_ALARM_STATE, type: f32 }
-  - { name: NUMBER_OF_CONNECTED_BMS, type: f32 }
-  - { name: POWERBUS_INFORMATION, type: f32 }
+  - { name: MAX_BATTERY_DISCHARGE_CURRENT, type: i16, description: "Maximum Battery Discharge Current", unit: "A" }
+  - { name: MAX_BATTERY_RECHARGE_CURRENT, type: i16, description: "Maximum Battery Recharge Current", unit: "A" }
+  - { name: GLOBAL_SOC, type: u8, description: "Global SOC of the system calculated from the SOC of all the batteries connected to the DC power bus", unit: "%" }
+  - { name: ID_GLOBAL_SOC, type: u8, description: "ID of the pack which limits the global SOC" }
+  - { name: GLOBAL_IBMS_ALARM_STATE, type: u8, description: "Global alert status: None (0), Minor (1), Major (2)" }
+  - { name: NUMBER_OF_CONNECTED_BMS, type: u8, description: "Number of battery packs connected to the DC bus" }
+  - { name: POWERBUS_INFORMATION, type: u8, description: "Powerbus information: All child BMS connected (0), At least one child BMS not connected (1)" }
   - { name: BAT_TMIN, type: f32 }
   - { name: BAT_TMAX, type: f32 }
   - { name: BAT_ID_TMIN, type: f32 }

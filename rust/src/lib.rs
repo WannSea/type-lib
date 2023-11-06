@@ -19,7 +19,9 @@ impl MetricMessage {
     pub fn get_json_data(&self) -> String {
         match self.id.get_type() {
             MetricType::String => format!("\"{}\"", String::from(self.data.clone())),
-            MetricType::f32 => f32::from(self.data.clone()).to_string()
+            MetricType::f32 => f32::from(self.data.clone()).to_string(),
+            MetricType::u8 => todo!(),
+            MetricType::i16 => todo!(),
         }
     }
 
