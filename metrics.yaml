@@ -51,6 +51,20 @@ metrics:
   - { name: GLOBAL_CELL_MAX, type: f32 }
   - { name: GLOBAL_CELL_MIN_ID, type: f32 }
   - { name: GLOBAL_CELL_MAX_ID, type: f32 }
+  - { name: BAT_1_U_1, type: u16, description: "Battery 1: Cell 1 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_2, type: u16, description: "Battery 1: Cell 2 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_3, type: u16, description: "Battery 1: Cell 3 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_4, type: u16, description: "Battery 1: Cell 4 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_5, type: u16, description: "Battery 1: Cell 5 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_6, type: u16, description: "Battery 1: Cell 6 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_7, type: u16, description: "Battery 1: Cell 7 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_8, type: u16, description: "Battery 1: Cell 8 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_9, type: u16, description: "Battery 1: Cell 9 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_10, type: u16, description: "Battery 1: Cell 10 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_11, type: u16, description: "Battery 1: Cell 11 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_12, type: u16, description: "Battery 1: Cell 12 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_13, type: u16, description: "Battery 1: Cell 13 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_1_U_14, type: u16, description: "Battery 1: Cell 14 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_1_AH_DISCHARGED, type: f32 }
   - { name: BAT_1_SOC, type: f32 }
   - { name: BAT_1_SOH, type: f32 }
@@ -63,6 +77,20 @@ metrics:
   - { name: BAT_1_MAJOR_ALERT_2, type: f32 }
   - { name: BAT_1_MAJOR_ALERT_3, type: f32 }
   - { name: BAT_1_MINOR_ALERT, type: f32 }
+  - { name: BAT_2_U_1, type: u16, description: "Battery 2: Cell 1 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_2, type: u16, description: "Battery 2: Cell 2 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_3, type: u16, description: "Battery 2: Cell 3 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_4, type: u16, description: "Battery 2: Cell 4 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_5, type: u16, description: "Battery 2: Cell 5 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_6, type: u16, description: "Battery 2: Cell 6 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_7, type: u16, description: "Battery 2: Cell 7 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_8, type: u16, description: "Battery 2: Cell 8 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_9, type: u16, description: "Battery 2: Cell 9 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_10, type: u16, description: "Battery 2: Cell 10 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_11, type: u16, description: "Battery 2: Cell 11 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_12, type: u16, description: "Battery 2: Cell 12 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_13, type: u16, description: "Battery 2: Cell 13 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_2_U_14, type: u16, description: "Battery 2: Cell 14 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_2_AH_DISCHARGED, type: f32 }
   - { name: BAT_2_SOC, type: f32 }
   - { name: BAT_2_SOH, type: f32 }
@@ -75,6 +103,20 @@ metrics:
   - { name: BAT_2_MAJOR_ALERT_2, type: f32 }
   - { name: BAT_2_MAJOR_ALERT_3, type: f32 }
   - { name: BAT_2_MINOR_ALERT, type: f32 }
+  - { name: BAT_3_U_1, type: u16, description: "Battery 3: Cell 1 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_2, type: u16, description: "Battery 3: Cell 2 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_3, type: u16, description: "Battery 3: Cell 3 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_4, type: u16, description: "Battery 3: Cell 4 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_5, type: u16, description: "Battery 3: Cell 5 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_6, type: u16, description: "Battery 3: Cell 6 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_7, type: u16, description: "Battery 3: Cell 7 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_8, type: u16, description: "Battery 3: Cell 8 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_9, type: u16, description: "Battery 3: Cell 9 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_10, type: u16, description: "Battery 3: Cell 10 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_11, type: u16, description: "Battery 3: Cell 11 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_12, type: u16, description: "Battery 3: Cell 12 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_13, type: u16, description: "Battery 3: Cell 13 voltage measurement (on the module)", unit: "mV" }
+  - { name: BAT_3_U_14, type: u16, description: "Battery 3: Cell 14 voltage measurement (on the module)", unit: "mV" }
   - { name: BAT_3_AH_DISCHARGED, type: f32 }
   - { name: BAT_3_SOC, type: f32 }
   - { name: BAT_3_SOH, type: f32 }
