@@ -129,18 +129,16 @@ metrics:
   - { name: BAT_3_MAJOR_ALERT_2, type: u8, description: "Battery 3: Major Alerts 2", unit: "Unknown 😭" }
   - { name: BAT_3_MAJOR_ALERT_3, type: u8, description: "Battery 3: Major Alerts 3", unit: "Unknown 😭" }
   - { name: BAT_3_MINOR_ALERT, type: u8, description: "Battery 3: Minor Alerts", unit: "Unknown 😭" }
-  - { name: MEM_USED_MB, type: f32 }
-  - { name: MEM_TOTAL, type: f32 }
-  - { name: SWAP_USED_MB, type: f32 }
-  - { name: SWAP_TOTAL, type: f32 }
-  - { name: SYSTEM_UPTIME, type: f32 }
-  - { name: CPU_USAGE_USER, type: f32 }
-  - { name: CPU_USAGE_SYSTEM, type: f32 }
-  - { name: CPU_FREQ, type: f32 }
-  - { name: RAM_USAGE, type: f32 }
-  - { name: CPU_TEMP, type: f32 }
-  - { name: TX_IN_PER_SEC, type: f32 }
-  - { name: TX_OUT_PER_SEC, type: f32 }
-  - { name: TX_QUEUE_COUNT, type: f32 }
-  - { name: CELLULAR_SIGNAL_QUALITY, type: f32 }
-  - { name: CELLULAR_NETWORK_MODE, type: String }
+  - { name: MEM_USED, type: u64, description: "System memory in use", unit: "Bytes" }
+  - { name: MEM_TOTAL, type: u64, description: "Total System memory available", unit: "Bytes" }
+  - { name: SWAP_USED, type: u64, description: "Swap memory in use", unit: "Bytes" }
+  - { name: SWAP_TOTAL, type: u64, description: "Total Swap memory available", unit: "Bytes" }
+  - { name: SYSTEM_UPTIME, type: f32, description: "System uptime", unit: "s" }
+  - { name: CPU_USAGE_USER, type: f32, description: "User CPU usage", unit: "%" }
+  - { name: CPU_USAGE_SYSTEM, type: f32, description: "System CPU usage", unit: "%" }
+  - { name: CPU_TEMP, type: f32, description: "CPU Temperature", unit: "°C"  }
+  - { name: TX_IN_PER_SEC, type: f32, description: "# of Metrics currently being collected per second", unit: "Metrics/s" }
+  - { name: TX_OUT_PER_SEC, type: f32, description: "# of Metrics currently being transmitted per second", unit: "Metrics/s" }
+  - { name: TX_QUEUE_COUNT, type: f32, description: "# of Metrics currently in queue waiting for transmission", unit: "-" }
+  - { name: CELLULAR_SIGNAL_QUALITY, type: f32, description: "AT Command Signal quality (refer to: https://m2msupport.net/m2msupport/atcsq-signal-quality/) for interpretation", unit: "-"  }
+  - { name: CELLULAR_NETWORK_MODE, type: String, description: "Cellular Network Mode" }
