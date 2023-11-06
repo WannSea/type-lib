@@ -9,7 +9,7 @@ def fill_in_opt_fields(arr):
 with open("./metrics.yaml", "r") as file:
     parsed = yaml.safe_load(file)["metrics"]
     fill_in_opt_fields(parsed)
-    markdown = markdown_table(parsed).set_params(row_sep = 'markdown', quote=False).get_markdown()
+    markdown = markdown_table(parsed).set_params(row_sep = 'markdown', quote=False, emoji_spacing="mono").get_markdown()
     with open("./Metrics.md", "w") as of:
         of.write(markdown)
     print("Successfully generated markdown")
