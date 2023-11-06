@@ -73,8 +73,14 @@ impl MetricMessage {
 
     pub fn get_json_repr(&self) -> String {
         let json_val: String = match self.id.get_type() {
-            MetricType::String => self.data.clone().into(),
-            MetricType::f32 => self.data.clone().into()
+            MetricType::String => {
+                let string_val: String = self.data.clone().into();
+                return format!("\"{}\"", string_val);
+            },
+            MetricType::f32 => {
+                let float_val: f32 = self.data.clone().into();
+                float_val.to_string()
+            }
         };
         format!("{{ ts: {}, id: {}, data: {} }}", self.ts, self.id.to_string(), json_val)
     }
