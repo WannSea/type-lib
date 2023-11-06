@@ -1,36 +1,30 @@
 # Metric definition file
 # This defines every metric used in transport
 # The ID is defined by the order in this sequence
-# Every element shall have the format { name: METRIC_NAME, type: METRIC_TYPE, description?: "Optional description" }
+# Every element shall have the format { name: METRIC_NAME, type: METRIC_TYPE, description?: "Optional description", unit?: "Optional unit" }
 
 metrics:
-  - { name: GPS_LON, type: f32 }
-  - { name: GPS_LAT, type: f32 }
-  - { name: GPS_SPEED, type: f32 }
-  - { name: GPS_COURSE, type: f32 }
-  - { name: GPS_ALTITUDE, type: f32 }
-  - { name: GPS_HOR_ERROR, type: f32 }
-  - { name: GPS_VELO_UNCERTAINTY, type: f32 }
-  - { name: GPS_VERT_UNCERTAINTY, type: f32 }
-  - { name: ACCELERATION_Y, type: f32 }
-  - { name: ACCELERATION_Z, type: f32 }
-  - { name: GYRO_X, type: f32 }
-  - { name: GYRO_Y, type: f32 }
-  - { name: GYRO_Z, type: f32 }
-  - { name: ROTATION_X, type: f32 }
-  - { name: ROTATION_Y, type: f32 }
-  - { name: ROTATION_Z, type: f32 }
-  - { name: FILTER_LON, type: f32 }
-  - { name: FILTER_LAT, type: f32 }
-  - { name: FILTER_ALTITUDE, type: f32 }
-  - { name: FILTER_SPEED, type: f32 }
-  - { name: FILTER_ROT_X, type: f32 }
-  - { name: FILTER_ROT_Y, type: f32 }
-  - { name: FILTER_ROT_Z, type: f32 }
-  - { name: APMU_TEMP, type: f32 }
-  - { name: MPMU_TEMP, type: f32 }
-  - { name: MOTOR_CURRENT, type: f32 }
-  - { name: BATTERY_VOLTAGE, type: f32 }
+  - { name: GPS_LON, type: f32, description: "GPS Longitude", unit: "°" }
+  - { name: GPS_LAT, type: f32, description: "GPS Latitude", unit: "°" }
+  - { name: GPS_SPEED, type: f32, description: "GPS Speed", unit: "kn" }
+  - { name: GPS_COURSE, type: f32, description: "GPS Course", unit: "°" }
+  - { name: GPS_ALTITUDE, type: f32, description: "GPS Altitude (above/below mean-sea-level)", unit: "m" }
+  - { name: GPS_HOR_ERROR, type: f32, description: "GPS Horizontal Error", unit: "m" }
+  - { name: GPS_VELO_UNCERTAINTY, type: f32, description: "GPS Velocity Uncertainty", unit: "m/s" }
+  - { name: GPS_VERT_UNCERTAINTY, type: f32, description: "GPS Vertical Uncertainty", unit: "m" }
+  - { name: ACCELERATION_X, type: f32, description: "Acceleration in X-axis", unit: "m/s²" }
+  - { name: ACCELERATION_Y, type: f32, description: "Acceleration in Y-axis", unit: "m/s²" }
+  - { name: ACCELERATION_Z, type: f32, description: "Acceleration in Z-axis", unit: "m/s²" }
+  - { name: GYRO_X, type: f32, description: "Gyro in X-axis", unit: "°" }
+  - { name: GYRO_Y, type: f32, description: "Gyro in Y-axis", unit: "°" }
+  - { name: GYRO_Z, type: f32, description: "Gyro in Z-axis", unit: "°" }
+  - { name: ROTATION_X, type: f32, description: "Fused Rotation in X-axis", unit: "°" }
+  - { name: ROTATION_Y, type: f32, description: "Fused Rotation in Y-axis", unit: "°" }
+  - { name: ROTATION_Z, type: f32, description: "Fused Rotation in Z-axis", unit: "°" }
+  - { name: APMU_TEMP, type: f32, description: "APMU Temperature", unit: "° C" }
+  - { name: MPMU_TEMP, type: f32, description: "MPMU Temperature", unit: "° C" }
+  - { name: MOTOR_CURRENT, type: f32, description: "Measured Motor Current", unit: "A" }
+  - { name: BATTERY_VOLTAGE, type: f32, description: "Measured Battery Voltage", unit: "V" }
   - { name: FAN_1, type: f32 }
   - { name: FAN_2, type: f32 }
   - { name: FAN_3, type: f32 }

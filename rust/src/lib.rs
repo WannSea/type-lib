@@ -31,10 +31,9 @@ impl MetricMessage {
 impl From<MetricMessage> for Vec<u8> {
     fn from(value: MetricMessage) -> Self {
         let mut out = Vec::new();
-        out.append(value.ts.to_le_bytes().to_vec().as_mut());
+        out.extend_from_slice(&value.ts.to_le_bytes());
         out.push(value.id as u8);
-        let mut data = value.data.0;
-        out.append(data.as_mut());
+        out.extend(Vec::from(value.data));
         return out;
     }
 }
