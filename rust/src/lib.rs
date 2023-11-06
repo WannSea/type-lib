@@ -1,16 +1,22 @@
 pub mod config;
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::{time::{SystemTime, UNIX_EPOCH}, fmt};
 
 use config::generated::MetricId;
 
 #[derive(Clone, Debug)]
 pub struct MetricByteValue(Vec<u8>);
 
-#[derive(Clone, Debug)]
+#[derive(Clone)]
 pub struct MetricMessage {
     ts: u128,
     id: MetricId,
     data: MetricByteValue
+}
+
+impl fmt::Debug for MetricMessage {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("MetricMessage").field("ts", &self.ts).field("id", &self.id).field("data", &self.data).finish()
+    }
 }
 
 impl Into<MetricByteValue> for f32 {
