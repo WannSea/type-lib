@@ -56,7 +56,11 @@ impl fmt::Display for ByteSizeError {
     }
 }
 impl Error for ByteSizeError {}
-
+pub enum ByteParseError {
+    ByteSizeError(ByteSizeError),
+    TryFromSliceError(TryFromSliceError),
+    FromUtf8Error(FromUtf8Error)
+}
 
 // FROM BYTES TO RUST DATA
 // Extend if necessary
@@ -67,52 +71,56 @@ impl From<MetricByteValue> for Vec<u8> {
 }
 
 impl TryFrom<MetricByteValue> for u8 {
-    type Error = ByteSizeError;
+    type Error = ByteParseError;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
         if value.0.len() < 1 {
-            return Err(ByteSizeError());
+            return Err(ByteParseError::ByteSizeError(ByteSizeError()));
         }
         return Ok(value.0[0]);
     }
 }
 
 impl TryFrom<MetricByteValue> for u16 {
-    type Error = Box<dyn Error>;
+    type Error = ByteParseError;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(u16::from_be_bytes(value.0.get(0..2).ok_or(ByteSizeError())?.try_into()?))
+        let bytes = value.0.get(0..2).ok_or(ByteParseError::ByteSizeError(ByteSizeError()))?;
+        Ok(u16::from_be_bytes(bytes.try_into().or_else(|e| Err(ByteParseError::TryFromSliceError(e)))?))
     }
 }
 
 impl TryFrom<MetricByteValue> for i16 {
-    type Error = Box<dyn Error>;
+    type Error = ByteParseError;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(i16::from_be_bytes(value.0.get(0..2).ok_or(ByteSizeError())?.try_into()?))
+        let bytes = value.0.get(0..2).ok_or(ByteParseError::ByteSizeError(ByteSizeError()))?;
+        Ok(i16::from_be_bytes(bytes.try_into().or_else(|e| Err(ByteParseError::TryFromSliceError(e)))?))
     }
 }
 
 impl TryFrom<MetricByteValue> for f32 {
-    type Error = Box<dyn Error>;
+    type Error = ByteParseError;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(f32::from_be_bytes(value.0.get(0..4).ok_or(ByteSizeError())?.try_into()?))
+        let bytes = value.0.get(0..4).ok_or(ByteParseError::ByteSizeError(ByteSizeError()))?;
+        Ok(f32::from_be_bytes(bytes.try_into().or_else(|e| Err(ByteParseError::TryFromSliceError(e)))?))
     }
 }
 
 impl TryFrom<MetricByteValue> for u64 {
-    type Error = Box<dyn Error>;
+    type Error = ByteParseError;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(u64::from_be_bytes(value.0.get(0..8).ok_or(ByteSizeError())?.try_into()?))
+        let bytes = value.0.get(0..8).ok_or(ByteParseError::ByteSizeError(ByteSizeError()))?;
+        Ok(u64::from_be_bytes(bytes.try_into().or_else(|e| Err(ByteParseError::TryFromSliceError(e)))?))
     }
 }
 
 impl TryFrom<MetricByteValue> for String {
-    type Error = FromUtf8Error;
+    type Error = ByteParseError;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(String::from_utf8(value.0)?)
+        Ok(String::from_utf8(value.0).or_else(|e| Err(ByteParseError::FromUtf8Error(e)))?)
     }
 }
