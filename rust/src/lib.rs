@@ -1,4 +1,4 @@
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::{time::{SystemTime, UNIX_EPOCH}, error::Error};
 use types::MetricByteValue;
 pub mod types;
 
@@ -16,19 +16,19 @@ impl MetricMessage {
         MetricMessage { id, data, ts: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() }
     }
 
-    pub fn get_json_data(&self) -> String {
+    pub fn get_json_data(&self) -> Result<String, Box<dyn Error>> {
         match self.id.get_type() {
-            MetricType::u8 => u8::try_from(self.data.clone()).unwrap_or_else(|_| panic!("Error parsing u8 for {}", self.id)).to_string(),
-            MetricType::i16 => i16::try_from(self.data.clone()).unwrap_or_else(|_| panic!("Error parsing i16 for {}", self.id)).to_string(),
-            MetricType::u16 => u16::try_from(self.data.clone()).unwrap_or_else(|_| panic!("Error parsing u16 for {}", self.id)).to_string(),
-            MetricType::f32 => f32::try_from(self.data.clone()).unwrap_or_else(|_| panic!("Error parsing f32 for {}", self.id)).to_string(),
-            MetricType::u64 => u64::try_from(self.data.clone()).unwrap_or_else(|_| panic!("Error parsing u64 for {}", self.id)).to_string(),
-            MetricType::String => format!("\"{}\"", String::try_from(self.data.clone()).unwrap_or_else(|_| panic!("Error parsing string for {}", self.id))),
+            MetricType::u8 => Ok(u8::try_from(self.data.clone())?.to_string()),
+            MetricType::i16 => Ok(i16::try_from(self.data.clone())?.to_string()),
+            MetricType::u16 => Ok(u16::try_from(self.data.clone())?.to_string()),
+            MetricType::f32 => Ok(f32::try_from(self.data.clone())?.to_string()),
+            MetricType::u64 => Ok(u64::try_from(self.data.clone())?.to_string()),
+            MetricType::String => Ok(format!("\"{}\"", String::try_from(self.data.clone())?.to_string())),
         }
     }
 
-    pub fn get_json_repr(&self) -> String {
-        format!("{{ ts: {}, id: {}, data: {} }}", self.ts, self.id.to_string(), self.get_json_data())
+    pub fn get_json_repr(&self) -> Result<String, Box<dyn Error>> {
+        Ok(format!("{{ ts: {}, id: {}, data: {} }}", self.ts, self.id.to_string(), self.get_json_data()?))
     }
 }
 
