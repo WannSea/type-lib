@@ -1,5 +1,5 @@
 use std::{time::{SystemTime, UNIX_EPOCH}, error::Error};
-use types::MetricByteValue;
+use types::{MetricByteValue, ByteParseError};
 pub mod types;
 
 include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
@@ -16,7 +16,7 @@ impl MetricMessage {
         MetricMessage { id, data, ts: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() }
     }
 
-    pub fn get_json_data(&self) -> Result<String, Box<dyn Error>> {
+    pub fn get_json_data(&self) -> Result<String, ByteParseError> {
         match self.id.get_type() {
             MetricType::u8 => Ok(u8::try_from(self.data.clone())?.to_string()),
             MetricType::i16 => Ok(i16::try_from(self.data.clone())?.to_string()),
