@@ -1,5 +1,5 @@
 use core::fmt;
-use std::{array::TryFromSliceError, string::FromUtf8Error, error::Error};
+use std::{array::TryFromSliceError, string::FromUtf8Error, error::Error, fmt::Display};
 
 #[derive(Clone, Debug)]
 pub struct MetricByteValue(pub Vec<u8>);
@@ -60,6 +60,15 @@ pub enum ByteParseError {
     ByteSizeError(ByteSizeError),
     TryFromSliceError(TryFromSliceError),
     FromUtf8Error(FromUtf8Error)
+}
+impl Display for ByteParseError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            ByteParseError::ByteSizeError(e) => e.fmt(f),
+            ByteParseError::TryFromSliceError(e) => e.fmt(f),
+            ByteParseError::FromUtf8Error(e) => e.fmt(f),
+        }
+    }
 }
 
 // FROM BYTES TO RUST DATA
