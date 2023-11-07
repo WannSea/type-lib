@@ -6,9 +6,9 @@ include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
 
 #[derive(Clone, Debug)]
 pub struct MetricMessage {
-    ts: u128,
-    id: MetricId,
-    data: MetricByteValue
+    pub ts: u128,
+    pub id: MetricId,
+    pub data: MetricByteValue
 }
 
 impl MetricMessage {
