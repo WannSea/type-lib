@@ -1,4 +1,5 @@
-use std::{array::TryFromSliceError, string::FromUtf8Error};
+use core::fmt;
+use std::{array::TryFromSliceError, string::FromUtf8Error, error::Error};
 
 #[derive(Clone, Debug)]
 pub struct MetricByteValue(pub Vec<u8>);
@@ -47,6 +48,16 @@ impl From<String> for MetricByteValue {
     }
 }
 
+#[derive(Debug, Copy, Clone)]
+pub struct ByteSizeError();
+impl fmt::Display for ByteSizeError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        "Invalid byte size".fmt(f)
+    }
+}
+impl Error for ByteSizeError {}
+
+
 // FROM BYTES TO RUST DATA
 // Extend if necessary
 impl From<MetricByteValue> for Vec<u8> {
@@ -55,41 +66,46 @@ impl From<MetricByteValue> for Vec<u8> {
     }
 }
 
-impl From<MetricByteValue> for u8 {
-    fn from(value: MetricByteValue) -> Self {
-        value.0[0]
+impl TryFrom<MetricByteValue> for u8 {
+    type Error = ByteSizeError;
+
+    fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
+        if value.0.len() < 1 {
+            return Err(ByteSizeError());
+        }
+        return Ok(value.0[0]);
     }
 }
 
 impl TryFrom<MetricByteValue> for u16 {
-    type Error = TryFromSliceError;
+    type Error = Box<dyn Error>;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(u16::from_be_bytes(value.0[0..2].try_into()?))
+        Ok(u16::from_be_bytes(value.0.get(0..2).ok_or(ByteSizeError())?.try_into()?))
     }
 }
 
 impl TryFrom<MetricByteValue> for i16 {
-    type Error = TryFromSliceError;
+    type Error = Box<dyn Error>;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(i16::from_be_bytes(value.0[0..2].try_into()?))
+        Ok(i16::from_be_bytes(value.0.get(0..2).ok_or(ByteSizeError())?.try_into()?))
     }
 }
 
 impl TryFrom<MetricByteValue> for f32 {
-    type Error = TryFromSliceError;
+    type Error = Box<dyn Error>;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(f32::from_be_bytes(value.0[0..4].try_into()?))
+        Ok(f32::from_be_bytes(value.0.get(0..4).ok_or(ByteSizeError())?.try_into()?))
     }
 }
 
 impl TryFrom<MetricByteValue> for u64 {
-    type Error = TryFromSliceError;
+    type Error = Box<dyn Error>;
 
     fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
-        Ok(u64::from_be_bytes(value.0[0..8].try_into()?))
+        Ok(u64::from_be_bytes(value.0.get(0..8).ok_or(ByteSizeError())?.try_into()?))
     }
 }
 
