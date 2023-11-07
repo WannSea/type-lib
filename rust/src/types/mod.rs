@@ -1,3 +1,5 @@
+use std::{array::TryFromSliceError, string::FromUtf8Error};
+
 #[derive(Clone, Debug)]
 pub struct MetricByteValue(pub Vec<u8>);
 
@@ -59,32 +61,42 @@ impl From<MetricByteValue> for u8 {
     }
 }
 
-impl From<MetricByteValue> for u16 {
-    fn from(value: MetricByteValue) -> Self {
-        u16::from_be_bytes(value.0[0..2].try_into().unwrap())
+impl TryFrom<MetricByteValue> for u16 {
+    type Error = TryFromSliceError;
+
+    fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
+        Ok(u16::from_be_bytes(value.0[0..2].try_into()?))
     }
 }
 
-impl From<MetricByteValue> for i16 {
-    fn from(value: MetricByteValue) -> Self {
-        i16::from_be_bytes(value.0[0..2].try_into().unwrap())
+impl TryFrom<MetricByteValue> for i16 {
+    type Error = TryFromSliceError;
+
+    fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
+        Ok(i16::from_be_bytes(value.0[0..2].try_into()?))
     }
 }
 
-impl From<MetricByteValue> for f32 {
-    fn from(value: MetricByteValue) -> Self {
-        f32::from_be_bytes(value.0[0..4].try_into().unwrap())
+impl TryFrom<MetricByteValue> for f32 {
+    type Error = TryFromSliceError;
+
+    fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
+        Ok(f32::from_be_bytes(value.0[0..4].try_into()?))
     }
 }
 
-impl From<MetricByteValue> for u64 {
-    fn from(value: MetricByteValue) -> Self {
-        u64::from_be_bytes(value.0[0..8].try_into().unwrap())
+impl TryFrom<MetricByteValue> for u64 {
+    type Error = TryFromSliceError;
+
+    fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
+        Ok(u64::from_be_bytes(value.0[0..8].try_into()?))
     }
 }
 
-impl From<MetricByteValue> for String {
-    fn from(value: MetricByteValue) -> Self {
-        String::from_utf8(value.0).unwrap()
+impl TryFrom<MetricByteValue> for String {
+    type Error = FromUtf8Error;
+
+    fn try_from(value: MetricByteValue) -> Result<Self, Self::Error> {
+        Ok(String::from_utf8(value.0)?)
     }
 }
