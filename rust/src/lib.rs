@@ -27,7 +27,7 @@ impl MetricMessage {
         }
     }
 
-    pub fn get_json_repr(&self) -> Result<String, Box<dyn Error>> {
+    pub fn get_json_repr(&self) -> Result<String, ByteParseError> {
         Ok(format!("{{ ts: {}, id: {}, data: {} }}", self.ts, self.id.to_string(), self.get_json_data()?))
     }
 }
