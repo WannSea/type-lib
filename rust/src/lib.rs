@@ -44,6 +44,6 @@ impl From<MetricMessage> for Vec<u8> {
 
 impl From<Vec<u8>> for MetricMessage {
     fn from(value: Vec<u8>) -> Self {
-        MetricMessage { ts: u128::from_be_bytes(value[0..16].try_into().unwrap()), id: MetricId::from_repr(value[16] as usize).unwrap(), data: MetricByteValue(value[..17].to_vec()) }
+        MetricMessage { ts: u128::from_be_bytes(value[0..16].try_into().unwrap()), id: MetricId::from_repr(value[16] as usize).unwrap(), data: MetricByteValue(value[17..].to_vec()) }
     }
 }
