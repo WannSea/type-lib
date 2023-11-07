@@ -36,6 +36,7 @@ fn gen_metric_ids_enum(config: &Config) -> Enum {
     .allow("non_camel_case_types")
     .vis("pub")
     .derive("EnumString")
+    .derive("FromRepr")
     .derive("Display")
 
     .derive("Clone")
@@ -72,6 +73,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut scope = Scope::new();
     scope.import("strum_macros", "EnumString");
     scope.import("strum_macros", "Display");
+    scope.import("strum_macros", "FromRepr");
 
     scope.push_enum(gen_metric_type_enum());
     scope.push_enum(gen_metric_ids_enum(&d));

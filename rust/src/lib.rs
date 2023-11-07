@@ -35,9 +35,15 @@ impl MetricMessage {
 impl From<MetricMessage> for Vec<u8> {
     fn from(value: MetricMessage) -> Self {
         let mut out = Vec::new();
-        out.extend_from_slice(&value.ts.to_le_bytes());
+        out.extend_from_slice(&value.ts.to_be_bytes());
         out.push(value.id as u8);
         out.extend(Vec::from(value.data));
         return out;
+    }
+}
+
+impl From<Vec<u8>> for MetricMessage {
+    fn from(value: Vec<u8>) -> Self {
+        MetricMessage { ts: u128::from_be_bytes(value[0..16].try_into().unwrap()), id: MetricId::from_repr(value[16] as usize).unwrap(), data: MetricByteValue(value[..17].to_vec()) }
     }
 }
