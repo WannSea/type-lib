@@ -142,3 +142,4 @@ metrics:
   - { name: TX_QUEUE_COUNT, type: f32, description: "# of Metrics currently in queue waiting for transmission", unit: "-" }
   - { name: CELLULAR_SIGNAL_QUALITY, type: f32, description: "AT Command Signal quality (refer to: https://m2msupport.net/m2msupport/atcsq-signal-quality/) for interpretation", unit: "-"  }
   - { name: CELLULAR_NETWORK_MODE, type: String, description: "Cellular Network Mode" }
+  - { name: NET_RX_BYTES, type: u64, description: "Network bytes received" }
