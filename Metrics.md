@@ -138,3 +138,4 @@
 |        TX_QUEUE_COUNT       |  f32 |                            # of Metrics currently in queue waiting for transmission                            |     -    |
 |   CELLULAR_SIGNAL_QUALITY   |  f32 |AT Command Signal quality (refer to: https://m2msupport.net/m2msupport/atcsq-signal-quality/) for interpretation|     -    |
 |    CELLULAR_NETWORK_MODE    |String|                                              Cellular Network Mode                                             |          |
+|         NET_RX_BYTES        |  u64 |                                             Network bytes received                                             |          |
