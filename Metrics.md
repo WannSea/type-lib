@@ -141,6 +141,6 @@
 |         NET_RX_BYTES        |  u64 |                                             Network bytes received                                             |          |
 |         NET_TX_BYTES        |  u64 |                                            Network bytes transmitted                                           |          |
 |        NET_RX_PACKETS       |  u64 |                                            Network packets received                                            |          |
-|        NET_TX_PACKETS       |  u64 |                                           Network paclets transmitted                                          |          |
+|        NET_TX_PACKETS       |  u64 |                                           Network packets transmitted                                          |          |
 |        NET_RX_ERORRS        |  u64 |                                             Network erorrs received                                            |          |
 |        NET_TX_ERORRS        |  u64 |                                             Network errors received                                            |          |
