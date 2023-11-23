@@ -147,4 +147,4 @@ metrics:
   - { name: NET_RX_PACKETS, type: u64, description: "Network packets received" }
   - { name: NET_TX_PACKETS, type: u64, description: "Network packets transmitted" }
   - { name: NET_RX_ERORRS, type: u64, description: "Network erorrs received" }
-  - { name: NET_TX_ERORRS, type: u64, description: "Network errors received" }
+  - { name: NET_TX_ERORRS, type: u64, description: "Network errors transmitted" }
