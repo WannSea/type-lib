@@ -139,3 +139,8 @@
 |   CELLULAR_SIGNAL_QUALITY   |  f32 |AT Command Signal quality (refer to: https://m2msupport.net/m2msupport/atcsq-signal-quality/) for interpretation|     -    |
 |    CELLULAR_NETWORK_MODE    |String|                                              Cellular Network Mode                                             |          |
 |         NET_RX_BYTES        |  u64 |                                             Network bytes received                                             |          |
+|         NET_TX_BYTES        |  u64 |                                            Network bytes transmitted                                           |          |
+|        NET_RX_PACKETS       |  u64 |                                            Network packets received                                            |          |
+|        NET_TX_PACKETS       |  u64 |                                           Network paclets transmitted                                          |          |
+|        NET_RX_ERORRS        |  u64 |                                             Network erorrs received                                            |          |
+|        NET_TX_ERORRS        |  u64 |                                             Network errors received                                            |          |
