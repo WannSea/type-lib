@@ -5,13 +5,7 @@ edition = "2021"
 build = "src/build.rs"
 
 [dependencies]
-codegen = "0.2.0"
-strum = "0.25.0"
-strum_macros = "0.25.3"
 prost = "*"
 
 [build-dependencies]
 prost-build = { version = "*" }
-codegen = "0.2.0"
-serde = { version = "1.0.190", features = ["std", "derive"] }
-serde_yaml = "0.9.27"
