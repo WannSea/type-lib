@@ -8,14 +8,10 @@ build = "src/build.rs"
 codegen = "0.2.0"
 strum = "0.25.0"
 strum_macros = "0.25.3"
-pbjson = "*"
 prost = "*"
-pbjson-types = "*"
-serde = "1.0.190"
 
 [build-dependencies]
 prost-build = { version = "*" }
-pbjson-build = "*"
 codegen = "0.2.0"
 serde = { version = "1.0.190", features = ["std", "derive"] }
 serde_yaml = "0.9.27"
