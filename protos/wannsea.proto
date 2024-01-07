@@ -9,7 +9,7 @@ extend google.protobuf.EnumValueOptions {
   optional string description = 1001;
 }
 
-enum MetricId {
+enum MessageId {
     GPS_LON = 0 [ (unit) = "°", (description) = "GPS Longitude" ];
     GPS_LAT = 1 [ (unit) = "°", (description) = "GPS Latitude" ];
     GPS_SPEED = 2 [ (unit) = "kn", (description) = "GPS Speed" ];
@@ -158,7 +158,7 @@ enum MetricId {
 
 message BoatCoreMessage {
   uint64 timestamp = 1;
-  MetricId cat = 2;
+  MessageId id = 2;
   oneof value {
     double double = 3;
     float float = 4;
