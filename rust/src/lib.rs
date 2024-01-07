@@ -1,8 +1,2 @@
-pub mod proto {
-    include!(concat!(env!("OUT_DIR"), "/wannsea.proto.rs"));
-}
-
-pub mod types {
-    include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
-}
-
+include!(concat!(env!("OUT_DIR"), "/wannsea.proto.rs"));
+include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
