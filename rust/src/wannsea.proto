@@ -1,9 +1,24 @@
+
 syntax = "proto3";
 package wannsea.proto;
 
+import "google/protobuf/descriptor.proto";
+
+
+extend google.protobuf.EnumValueOptions {
+  optional string unit = 1000;
+  optional string description = 1001;
+}
+
+enum MetricId {
+  TEST_X = 0 [ (unit) = "GRAD", (description) = "Nur ein Test!" ];
+  TEST_Y = 1;
+  TEST_Z = 2;
+}
+
 message BoatCoreMessage {
   uint64 timestamp = 1;
-  uint32 cat = 2;
+  MetricId cat = 2;
   oneof value {
     double double = 3;
     float float = 4;
