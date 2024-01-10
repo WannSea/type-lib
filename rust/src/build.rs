@@ -12,6 +12,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     prost_build::Config::new()
         .type_attribute(".", "#[derive(serde::Serialize)]")
+        .type_attribute(".", "#[serde(rename_all = \"camelCase\")]")
         .compile_protos(&proto_files, &[root])?;
     
     Ok(())

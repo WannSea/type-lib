@@ -5,12 +5,9 @@ edition = "2021"
 build = "src/build.rs"
 
 [dependencies]
-pbjson = "0.6.0"
-pbjson-types = "0.6.0"
 prost = "*"
-serde = "1.0.195"
+serde = { version = "1.0", features = ["derive"] }
 
 [build-dependencies]
-serde = "1.0.195"
+serde = { version = "1.0", features = ["derive"] }
 prost-build = { version = "*" }
-pbjson-build = "0.6.0"
