@@ -11,5 +11,6 @@ prost = "*"
 serde = "1.0.195"
 
 [build-dependencies]
+serde = "1.0.195"
 prost-build = { version = "*" }
 pbjson-build = "0.6.0"
