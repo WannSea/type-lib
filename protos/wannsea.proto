@@ -156,6 +156,17 @@ enum MessageId {
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
 }
 
+message Vector2 {
+  float x = 1;
+  float y = 2;
+}
+
+message Vector3 {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
 message BoatCoreMessage {
   uint64 timestamp = 1;
   MessageId id = 2;
@@ -175,5 +186,7 @@ message BoatCoreMessage {
     bool bool = 15;
     string string = 16;
     bytes bytes = 17;
+    Vector2 vector2 = 18;
+    Vector3 vector3 = 19;
   } 
 }
