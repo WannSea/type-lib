@@ -17,15 +17,9 @@ enum MessageId {
     GPS_HOR_ERROR = 5 [ (unit) = "m", (description) = "GPS Horizontal Error" ];
     GPS_VELO_UNCERTAINTY = 6 [ (unit) = "m/s", (description) = "GPS Velocity Uncertainty" ];
     GPS_VERT_UNCERTAINTY = 7 [ (unit) = "m", (description) = "GPS Vertical Uncertainty" ];
-    ACCELERATION_X = 8 [ (unit) = "m/s²", (description) = "Acceleration in X-axis" ];
-    ACCELERATION_Y = 9 [ (unit) = "m/s²", (description) = "Acceleration in Y-axis" ];
-    ACCELERATION_Z = 10 [ (unit) = "m/s²", (description) = "Acceleration in Z-axis" ];
-    GYRO_X = 11 [ (unit) = "°", (description) = "Gyro in X-axis" ];
-    GYRO_Y = 12 [ (unit) = "°", (description) = "Gyro in Y-axis" ];
-    GYRO_Z = 13 [ (unit) = "°", (description) = "Gyro in Z-axis" ];
-    ROTATION_X = 14 [ (unit) = "°", (description) = "Fused Rotation in X-axis" ];
-    ROTATION_Y = 15 [ (unit) = "°", (description) = "Fused Rotation in Y-axis" ];
-    ROTATION_Z = 16 [ (unit) = "°", (description) = "Fused Rotation in Z-axis" ];
+    ACCELERATION = 8 [ (unit) = "m/s²", (description) = "Acceleration (Vec3)" ];
+    GYRO = 11 [ (unit) = "°", (description) = "Gyro in X-axis" ];
+    ROTATION = 14 [ (unit) = "°", (description) = "Fused Rotation in X-axis" ];
     APMU_TEMP = 17 [ (unit) = "°C", (description) = "APMU Temperature" ];
     MPMU_TEMP = 18 [ (unit) = "°C", (description) = "MPMU Temperature" ];
     MOTOR_CURRENT = 19 [ (unit) = "A", (description) = "Measured Motor Current" ];
