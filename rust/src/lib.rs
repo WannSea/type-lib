@@ -5,3 +5,8 @@ impl PartialEq<i32> for MessageId {
         return *other == (*self as i32);
     }
 }
+impl PartialEq<MessageId> for i32 {
+    fn eq(&self, other: &MessageId) -> bool {
+        return (*other as i32) == *self;
+    }
+}
