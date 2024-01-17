@@ -7,15 +7,9 @@
 | 5 |        GPS_HOR_ERROR        |                                              GPS Horizontal Error                                              |     m    |
 | 6 |     GPS_VELO_UNCERTAINTY    |                                            GPS Velocity Uncertainty                                            |    m/s   |
 | 7 |     GPS_VERT_UNCERTAINTY    |                                            GPS Vertical Uncertainty                                            |     m    |
-| 8 |        ACCELERATION_X       |                                             Acceleration in X-axis                                             |   m/s²   |
-| 9 |        ACCELERATION_Y       |                                             Acceleration in Y-axis                                             |   m/s²   |
-| 10|        ACCELERATION_Z       |                                             Acceleration in Z-axis                                             |   m/s²   |
-| 11|            GYRO_X           |                                                 Gyro in X-axis                                                 |     °    |
-| 12|            GYRO_Y           |                                                 Gyro in Y-axis                                                 |     °    |
-| 13|            GYRO_Z           |                                                 Gyro in Z-axis                                                 |     °    |
-| 14|          ROTATION_X         |                                            Fused Rotation in X-axis                                            |     °    |
-| 15|          ROTATION_Y         |                                            Fused Rotation in Y-axis                                            |     °    |
-| 16|          ROTATION_Z         |                                            Fused Rotation in Z-axis                                            |     °    |
+| 8 |         ACCELERATION        |                                               Acceleration (Vec3)                                              |   m/s²   |
+| 11|             GYRO            |                                                 Gyro in X-axis                                                 |     °    |
+| 14|           ROTATION          |                                            Fused Rotation in X-axis                                            |     °    |
 | 17|          APMU_TEMP          |                                                APMU Temperature                                                |    °C    |
 | 18|          MPMU_TEMP          |                                                MPMU Temperature                                                |    °C    |
 | 19|        MOTOR_CURRENT        |                                             Measured Motor Current                                             |     A    |
