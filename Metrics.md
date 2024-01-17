@@ -1,7 +1,6 @@
 | id|             name            |                                                   description                                                  |   unit   |
 |---|-----------------------------|----------------------------------------------------------------------------------------------------------------|----------|
-| 0 |           GPS_LON           |                                                  GPS Longitude                                                 |     °    |
-| 1 |           GPS_LAT           |                                                  GPS Latitude                                                  |     °    |
+| 0 |           GPS_POS           |                                           GPS Position (x Lat, y Lon)                                          |     °    |
 | 2 |          GPS_SPEED          |                                                    GPS Speed                                                   |    kn    |
 | 3 |          GPS_COURSE         |                                                   GPS Course                                                   |     °    |
 | 4 |         GPS_ALTITUDE        |                                    GPS Altitude (above/below mean-sea-level)                                   |     m    |
