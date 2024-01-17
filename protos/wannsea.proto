@@ -18,8 +18,8 @@ enum MessageId {
     GPS_VELO_UNCERTAINTY = 6 [ (unit) = "m/s", (description) = "GPS Velocity Uncertainty" ];
     GPS_VERT_UNCERTAINTY = 7 [ (unit) = "m", (description) = "GPS Vertical Uncertainty" ];
     ACCELERATION = 8 [ (unit) = "m/s²", (description) = "Acceleration (Vec3)" ];
-    GYRO = 11 [ (unit) = "°", (description) = "Gyro in X-axis" ];
-    ROTATION = 14 [ (unit) = "°", (description) = "Fused Rotation in X-axis" ];
+    GYRO = 11 [ (unit) = "°", (description) = "Gyro (Vec3)" ];
+    ROTATION = 14 [ (unit) = "°", (description) = "Fused Rotation (Vec3)" ];
     APMU_TEMP = 17 [ (unit) = "°C", (description) = "APMU Temperature" ];
     MPMU_TEMP = 18 [ (unit) = "°C", (description) = "MPMU Temperature" ];
     MOTOR_CURRENT = 19 [ (unit) = "A", (description) = "Measured Motor Current" ];
