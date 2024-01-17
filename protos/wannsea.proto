@@ -10,8 +10,7 @@ extend google.protobuf.EnumValueOptions {
 }
 
 enum MessageId {
-    GPS_LON = 0 [ (unit) = "°", (description) = "GPS Longitude" ];
-    GPS_LAT = 1 [ (unit) = "°", (description) = "GPS Latitude" ];
+    GPS_POS = 0 [ (unit) = "°", (description) = "GPS Position (x Lat, y Lon)" ];
     GPS_SPEED = 2 [ (unit) = "kn", (description) = "GPS Speed" ];
     GPS_COURSE = 3 [ (unit) = "°", (description) = "GPS Course" ];
     GPS_ALTITUDE = 4 [ (unit) = "m", (description) = "GPS Altitude (above/below mean-sea-level)" ];
