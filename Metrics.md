@@ -8,8 +8,8 @@
 | 6 |     GPS_VELO_UNCERTAINTY    |                                            GPS Velocity Uncertainty                                            |    m/s   |
 | 7 |     GPS_VERT_UNCERTAINTY    |                                            GPS Vertical Uncertainty                                            |     m    |
 | 8 |         ACCELERATION        |                                               Acceleration (Vec3)                                              |   m/s²   |
-| 11|             GYRO            |                                                 Gyro in X-axis                                                 |     °    |
-| 14|           ROTATION          |                                            Fused Rotation in X-axis                                            |     °    |
+| 11|             GYRO            |                                                   Gyro (Vec3)                                                  |     °    |
+| 14|           ROTATION          |                                              Fused Rotation (Vec3)                                             |     °    |
 | 17|          APMU_TEMP          |                                                APMU Temperature                                                |    °C    |
 | 18|          MPMU_TEMP          |                                                MPMU Temperature                                                |    °C    |
 | 19|        MOTOR_CURRENT        |                                             Measured Motor Current                                             |     A    |
