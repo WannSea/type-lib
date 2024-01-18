@@ -14,10 +14,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     .join("proto_descriptor.bin");
 
     prost_build::Config::new()
-        // .type_attribute(".", "#[derive(serde::Serialize)]")
-        // .type_attribute(".", "#[serde(rename_all = \"camelCase\")]")
-        //.type_attribute("BoatCoreMessage.value", "#[serde(tag = \"type\", content = \"value\")]")
-        
         .file_descriptor_set_path(&descriptor_path)
         // Override prost-types with pbjson-types
         .compile_well_known_types()
