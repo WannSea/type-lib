@@ -3,6 +3,7 @@ syntax = "proto3";
 package wannsea.proto;
 
 import "google/protobuf/descriptor.proto";
+import "google/protobuf/timestamp.proto";
 
 extend google.protobuf.EnumValueOptions {
   optional string unit = 1000;
@@ -161,7 +162,7 @@ message Vector3 {
 }
 
 message BoatCoreMessage {
-  uint64 timestamp = 1;
+  google.protobuf.Timestamp timestamp = 1;
   MessageId id = 2;
   oneof value {
     double double = 3;

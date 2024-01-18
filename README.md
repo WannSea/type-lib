@@ -7,4 +7,5 @@ A readable overview can be found [here](Metrics.md) which is automatically gener
 
 ## Rust
 The rust folder contains a cargo library which can be embedded inside Rust projects. 
-It generates the corresponding rust structs by using the [prost crate](https://github.com/tokio-rs/prost/) and [pbjson](https://github.com/influxdata/pbjson) for implementing serde-traits.
+It generates the corresponding rust structs by using the [prost crate](https://github.com/tokio-rs/prost/) and [pbjson](https://github.com/influxdata/pbjson) for implementing serde-traits. 
+**This is done inside the build script, so there are no build artifacts inside this repo**
