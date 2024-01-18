@@ -5,6 +5,9 @@ edition = "2021"
 build = "src/build.rs"
 
 [dependencies]
+chrono = "0.4.31"
+pbjson = "0.6.0"
+pbjson-types = "0.6.0"
 prost = "*"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.111"
@@ -12,3 +15,4 @@ serde_json = "1.0.111"
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
 prost-build = { version = "*" }
+pbjson-build = "0.6.2"
