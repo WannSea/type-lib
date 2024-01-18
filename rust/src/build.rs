@@ -13,7 +13,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     prost_build::Config::new()
         .type_attribute(".", "#[derive(serde::Serialize)]")
         .type_attribute(".", "#[serde(rename_all = \"camelCase\")]")
-        .enum_attribute("MessageId", "#[derive(num_derive::FromPrimitive)]")
         .compile_protos(&proto_files, &[root])?;
     
     Ok(())

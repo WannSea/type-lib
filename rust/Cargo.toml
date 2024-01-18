@@ -8,8 +8,6 @@ build = "src/build.rs"
 prost = "*"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.111"
-num-traits = "0.2"
-num-derive = "0.2"
 
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
