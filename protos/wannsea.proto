@@ -166,6 +166,10 @@ message Vector3 {
   float z = 3;
 }
 
+message Floats {
+  repeated float values = 1;
+}
+
 message BoatCoreMessage {
   google.protobuf.Timestamp timestamp = 1;
   MessageId id = 2;
@@ -187,7 +191,6 @@ message BoatCoreMessage {
     bytes bytes = 17;
     Vector2 vector2 = 18;
     Vector3 vector3 = 19;
-
-    repeated float floats = 20;
+    Floats floats = 20;
   } 
 }
