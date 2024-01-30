@@ -1,6 +1,7 @@
 | id|             name            |                                                   description                                                  |   unit   |
 |---|-----------------------------|----------------------------------------------------------------------------------------------------------------|----------|
 | 0 |           GPS_POS           |                                           GPS Position (x Lat, y Lon)                                          |     °    |
+| 1 |     GPS_SATELLITE_COUNT     |                                               Count of satellites                                              |     #    |
 | 2 |          GPS_SPEED          |                                                    GPS Speed                                                   |    kn    |
 | 3 |          GPS_COURSE         |                                                   GPS Course                                                   |     °    |
 | 4 |         GPS_ALTITUDE        |                                    GPS Altitude (above/below mean-sea-level)                                   |     m    |
@@ -137,3 +138,7 @@
 |141|        NET_TX_PACKETS       |                                           Network packets transmitted                                          |          |
 |142|        NET_RX_ERORRS        |                                             Network erorrs received                                            |          |
 |143|        NET_TX_ERORRS        |                                           Network errors transmitted                                           |          |
+|144|          CPU_FREQ_1         |                                             CPU Frequency (Core 1)                                             |    MHz   |
+|145|          CPU_FREQ_2         |                                             CPU Frequency (Core 2)                                             |    MHz   |
+|146|          CPU_FREQ_3         |                                             CPU Frequency (Core 3)                                             |    MHz   |
+|147|          CPU_FREQ_4         |                                             CPU Frequency (Core 4)                                             |    MHz   |
