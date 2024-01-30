@@ -149,6 +149,10 @@ enum MessageId {
     NET_TX_PACKETS = 141 [ (unit) = "", (description) = "Network packets transmitted" ];
     NET_RX_ERORRS = 142 [ (unit) = "", (description) = "Network erorrs received" ];
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
+    CPU_FREQ_1 = 144 [ (unit) = "MHz", (description) = "CPU Frequency (Core 1)" ];
+    CPU_FREQ_2 = 145 [ (unit) = "MHz", (description) = "CPU Frequency (Core 2)" ];
+    CPU_FREQ_3 = 146 [ (unit) = "MHz", (description) = "CPU Frequency (Core 3)" ];
+    CPU_FREQ_4 = 147 [ (unit) = "MHz", (description) = "CPU Frequency (Core 4)" ];
 }
 
 message Vector2 {
