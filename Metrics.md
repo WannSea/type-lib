@@ -138,7 +138,4 @@
 |141|        NET_TX_PACKETS       |                                           Network packets transmitted                                          |          |
 |142|        NET_RX_ERORRS        |                                             Network erorrs received                                            |          |
 |143|        NET_TX_ERORRS        |                                           Network errors transmitted                                           |          |
-|144|          CPU_FREQ_1         |                                             CPU Frequency (Core 1)                                             |    MHz   |
-|145|          CPU_FREQ_2         |                                             CPU Frequency (Core 2)                                             |    MHz   |
-|146|          CPU_FREQ_3         |                                             CPU Frequency (Core 3)                                             |    MHz   |
-|147|          CPU_FREQ_4         |                                             CPU Frequency (Core 4)                                             |    MHz   |
+|144|          CPU_FREQS          |                                                 CPU Frequencies                                                |    MHz   |
