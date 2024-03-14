@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package wannsea.metric_message;
+
+import "protos/metric_message/ids.proto";
+import "protos/metric_message/custom_data.proto";
+import "google/protobuf/timestamp.proto";
+
+message MetricMessage {
+    google.protobuf.Timestamp timestamp = 1;
+    wannsea.metric_message.MessageId id = 2;
+    oneof value {
+        double double = 3;
+        float float = 4;
+        int32 int32 = 5;
+        int64 int64 = 6;
+        uint32 uint32 = 7;
+        uint64 uint64 = 8;
+        sint32 sint32 = 9;
+        sint64 sint64 = 10;
+        fixed32 fixed32 = 11;
+        fixed64 fixed64 = 12;
+        sfixed32 sfixed32 = 13;
+        sfixed64 sfixed64 = 14;
+        bool bool = 15;
+        string string = 16;
+        bytes bytes = 17;
+        wannsea.metric_message.Vector2 vector2 = 18;
+        wannsea.metric_message.Vector3 vector3 = 19;
+        wannsea.metric_message.Floats floats = 20;
+    } 
+}
+  

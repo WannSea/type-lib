@@ -1,9 +1,7 @@
-
 syntax = "proto3";
-package wannsea.proto;
 
+package wannsea.metric_message;
 import "google/protobuf/descriptor.proto";
-import "google/protobuf/timestamp.proto";
 
 extend google.protobuf.EnumValueOptions {
   optional string unit = 1000;
@@ -150,44 +148,4 @@ enum MessageId {
     NET_RX_ERORRS = 142 [ (unit) = "", (description) = "Network erorrs received" ];
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
     CPU_FREQS = 144 [ (unit) = "MHz", (description) = "CPU Frequencies" ];
-}
-
-message Vector2 {
-  float x = 1;
-  float y = 2;
-}
-
-message Vector3 {
-  float x = 1;
-  float y = 2;
-  float z = 3;
-}
-
-message Floats {
-  repeated float values = 1;
-}
-
-message BoatCoreMessage {
-  google.protobuf.Timestamp timestamp = 1;
-  MessageId id = 2;
-  oneof value {
-    double double = 3;
-    float float = 4;
-    int32 int32 = 5;
-    int64 int64 = 6;
-    uint32 uint32 = 7;
-    uint64 uint64 = 8;
-    sint32 sint32 = 9;
-    sint64 sint64 = 10;
-    fixed32 fixed32 = 11;
-    fixed64 fixed64 = 12;
-    sfixed32 sfixed32 = 13;
-    sfixed64 sfixed64 = 14;
-    bool bool = 15;
-    string string = 16;
-    bytes bytes = 17;
-    Vector2 vector2 = 18;
-    Vector3 vector3 = 19;
-    Floats floats = 20;
-  } 
 }
