@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package wannsea.metric_message;
+package wannsea.boat_core;
 
-import "protos/metric_message/ids.proto";
-import "protos/metric_message/custom_data.proto";
+import "protos/boat_core/ids.proto";
+import "protos/boat_core/custom_data.proto";
 import "google/protobuf/timestamp.proto";
 
-message MetricMessage {
+message BoatCoreMessage {
     google.protobuf.Timestamp timestamp = 1;
-    wannsea.metric_message.MessageId id = 2;
+    wannsea.boat_core.MessageId id = 2;
     oneof value {
         double double = 3;
         float float = 4;
@@ -25,9 +25,9 @@ message MetricMessage {
         bool bool = 15;
         string string = 16;
         bytes bytes = 17;
-        wannsea.metric_message.Vector2 vector2 = 18;
-        wannsea.metric_message.Vector3 vector3 = 19;
-        wannsea.metric_message.Floats floats = 20;
+        wannsea.boat_core.Vector2 vector2 = 18;
+        wannsea.boat_core.Vector3 vector3 = 19;
+        wannsea.boat_core.Floats floats = 20;
     } 
 }
   
