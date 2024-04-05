@@ -13,3 +13,9 @@ impl PartialEq<MessageId> for i32 {
         return (*other as i32) == *self;
     }
 }
+impl BoatCoreMessage {
+    pub fn get_ts_ns(&self) -> u128 {
+        let ts = self.timestamp.as_ref().unwrap();
+        return ((ts.seconds as u128) * 1_000_000_000) + (ts.nanos as u128);
+    }
+}
