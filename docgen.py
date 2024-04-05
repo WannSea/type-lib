@@ -13,7 +13,7 @@ def get_option_val(el, name):
             return option.value
     return ""
 
-with open("./protos/metric_message/ids.proto", "r") as file:
+with open("./protos/boat_core/ids.proto", "r") as file:
     metricList = []
 
     ast = Parser().parse(file.read())
