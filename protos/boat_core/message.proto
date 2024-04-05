@@ -25,8 +25,6 @@ message BoatCoreMessage {
         bool bool = 15;
         string string = 16;
         bytes bytes = 17;
-        wannsea.boat_core.Vector2 vector2 = 18;
-        wannsea.boat_core.Vector3 vector3 = 19;
         wannsea.boat_core.Floats floats = 20;
     } 
 }
