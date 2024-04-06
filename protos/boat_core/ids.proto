@@ -148,4 +148,9 @@ enum MessageId {
     NET_RX_ERORRS = 142 [ (unit) = "", (description) = "Network erorrs received" ];
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
     CPU_FREQS = 144 [ (unit) = "MHz", (description) = "CPU Frequencies" ];
+    FUSED_POSITION = 145 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+    FUSED_VELOCITY = 146 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+    FUSED_ORIENTATION = 147 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+
+
 }
