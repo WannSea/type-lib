@@ -149,8 +149,13 @@ enum MessageId {
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
     CPU_FREQS = 144 [ (unit) = "MHz", (description) = "CPU Frequencies" ];
     FUSED_POSITION = 145 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
-    FUSED_VELOCITY = 146 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
-    FUSED_ORIENTATION = 147 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+    FUSED_POSITION_UNCERTAINTY = 146 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+
+    FUSED_VELOCITY = 147 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+    FUSED_VELOCITY_UNCERTAINTY = 148 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+
+    FUSED_ORIENTATION = 149 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
+    FUSED_ORIENTATION_UNCERTAINTY = 150 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
 
 
 }
