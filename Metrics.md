@@ -139,3 +139,9 @@
 |142|        NET_RX_ERORRS        |                                             Network erorrs received                                            |          |
 |143|        NET_TX_ERORRS        |                                           Network errors transmitted                                           |          |
 |144|          CPU_FREQS          |                                                 CPU Frequencies                                                |    MHz   |
+|145|        FUSED_POSITION       |                                                 IMU+GNSS Fusion                                                |    tbd   |
+|146|  FUSED_POSITION_UNCERTAINTY |                                                 IMU+GNSS Fusion                                                |    tbd   |
+|147|        FUSED_VELOCITY       |                                                 IMU+GNSS Fusion                                                |    tbd   |
+|148|  FUSED_VELOCITY_UNCERTAINTY |                                                 IMU+GNSS Fusion                                                |    tbd   |
+|149|      FUSED_ORIENTATION      |                                                 IMU+GNSS Fusion                                                |    tbd   |
+|150|FUSED_ORIENTATION_UNCERTAINTY|                                                 IMU+GNSS Fusion                                                |    tbd   |
