@@ -133,8 +133,7 @@ enum MessageId {
     SWAP_USED = 127 [ (unit) = "Bytes", (description) = "Swap memory in use" ];
     SWAP_TOTAL = 128 [ (unit) = "Bytes", (description) = "Total Swap memory available" ];
     SYSTEM_UPTIME = 129 [ (unit) = "s", (description) = "System uptime" ];
-    CPU_USAGE_USER = 130 [ (unit) = "%", (description) = "User CPU usage" ];
-    CPU_USAGE_SYSTEM = 131 [ (unit) = "%", (description) = "System CPU usage" ];
+    CPU_USAGE = 130 [ (unit) = "%", (description) = "User CPU usage" ];
     CPU_TEMP = 132 [ (unit) = "°C", (description) = "CPU Temperature" ];
     TX_IN_PER_SEC = 133 [ (unit) = "Metrics/s", (description) = "# of Metrics currently being collected per second" ];
     TX_OUT_PER_SEC = 134 [ (unit) = "Metrics/s", (description) = "# of Metrics currently being transmitted per second" ];
