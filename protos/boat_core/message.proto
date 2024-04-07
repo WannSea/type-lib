@@ -26,6 +26,7 @@ message BoatCoreMessage {
         string string = 16;
         bytes bytes = 17;
         wannsea.boat_core.Floats floats = 20;
+        wannsea.boat_core.StringFloatMap stringFloatMap = 21;
     } 
 }
   

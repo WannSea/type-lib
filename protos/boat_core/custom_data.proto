@@ -5,3 +5,7 @@ package wannsea.boat_core;
 message Floats {
     repeated float values = 1;
 }
+
+message StringFloatMap {
+    map<string, float> items = 1;
+}
