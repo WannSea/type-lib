@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  docgen:
     runs-on: [self-hosted]
     steps:
     - uses: actions/checkout@v3
@@ -28,5 +28,6 @@ jobs:
         author_email: it@wannsea.eu
         message: 'Docgen'
         add: 'Metrics.md'
-
+  rebuild:
+    uses: WannSea/shore-core-v2/.github/workflows/server.yml
     
