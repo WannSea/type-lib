@@ -158,5 +158,5 @@ enum MessageId {
     CPU_USAGE_SYSTEM = 207 [ (unit) = "%", (description) = "System CPU usage" ];
     CPU_TEMP = 208 [ (unit) = "°C", (description) = "CPU Temperature" ];
     PROC_CPU_USAGE = 209 [ (unit) = "%", (description) = "CPU Usage by process" ];
-    PROC_MEM_USED = 210 [ (unit) = "Bytes", (description) = "Memory Usage by process" ];
+    PROC_MEM_USED = 210 [ (unit) = "MegaBytes (MB)", (description) = "Memory Usage by process" ];
 }
