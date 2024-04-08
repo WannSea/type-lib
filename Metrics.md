@@ -124,8 +124,7 @@
 |127|          SWAP_USED          |                                               Swap memory in use                                               |   Bytes  |
 |128|          SWAP_TOTAL         |                                           Total Swap memory available                                          |   Bytes  |
 |129|        SYSTEM_UPTIME        |                                                  System uptime                                                 |     s    |
-|130|        CPU_USAGE_USER       |                                                 User CPU usage                                                 |     %    |
-|131|       CPU_USAGE_SYSTEM      |                                                System CPU usage                                                |     %    |
+|130|          CPU_USAGE          |                                                 User CPU usage                                                 |     %    |
 |132|           CPU_TEMP          |                                                 CPU Temperature                                                |    °C    |
 |133|        TX_IN_PER_SEC        |                                # of Metrics currently being collected per second                               | Metrics/s|
 |134|        TX_OUT_PER_SEC       |                               # of Metrics currently being transmitted per second                              | Metrics/s|
