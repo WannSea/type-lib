@@ -119,13 +119,6 @@
 |122|     BAT_3_MAJOR_ALERT_2     |                                            Battery 3: Major Alerts 2                                           |Unknown 😭|
 |123|     BAT_3_MAJOR_ALERT_3     |                                            Battery 3: Major Alerts 3                                           |Unknown 😭|
 |124|      BAT_3_MINOR_ALERT      |                                             Battery 3: Minor Alerts                                            |Unknown 😭|
-|125|           MEM_USED          |                                              System memory in use                                              |   Bytes  |
-|126|          MEM_TOTAL          |                                          Total System memory available                                         |   Bytes  |
-|127|          SWAP_USED          |                                               Swap memory in use                                               |   Bytes  |
-|128|          SWAP_TOTAL         |                                           Total Swap memory available                                          |   Bytes  |
-|129|        SYSTEM_UPTIME        |                                                  System uptime                                                 |     s    |
-|130|          CPU_USAGE          |                                                 User CPU usage                                                 |     %    |
-|132|           CPU_TEMP          |                                                 CPU Temperature                                                |    °C    |
 |133|        TX_IN_PER_SEC        |                                # of Metrics currently being collected per second                               | Metrics/s|
 |134|        TX_OUT_PER_SEC       |                               # of Metrics currently being transmitted per second                              | Metrics/s|
 |135|        TX_QUEUE_COUNT       |                            # of Metrics currently in queue waiting for transmission                            |     -    |
@@ -137,10 +130,20 @@
 |141|        NET_TX_PACKETS       |                                           Network packets transmitted                                          |          |
 |142|        NET_RX_ERORRS        |                                             Network erorrs received                                            |          |
 |143|        NET_TX_ERORRS        |                                           Network errors transmitted                                           |          |
-|144|          CPU_FREQS          |                                                 CPU Frequencies                                                |    MHz   |
 |145|        FUSED_POSITION       |                                                 IMU+GNSS Fusion                                                |    tbd   |
 |146|  FUSED_POSITION_UNCERTAINTY |                                                 IMU+GNSS Fusion                                                |    tbd   |
 |147|        FUSED_VELOCITY       |                                                 IMU+GNSS Fusion                                                |    tbd   |
 |148|  FUSED_VELOCITY_UNCERTAINTY |                                                 IMU+GNSS Fusion                                                |    tbd   |
 |149|      FUSED_ORIENTATION      |                                                 IMU+GNSS Fusion                                                |    tbd   |
 |150|FUSED_ORIENTATION_UNCERTAINTY|                                                 IMU+GNSS Fusion                                                |    tbd   |
+|200|          CPU_FREQS          |                                                 CPU Frequencies                                                |    MHz   |
+|201|           MEM_USED          |                                              System memory in use                                              |   Bytes  |
+|202|          MEM_TOTAL          |                                          Total System memory available                                         |   Bytes  |
+|203|          SWAP_USED          |                                               Swap memory in use                                               |   Bytes  |
+|204|          SWAP_TOTAL         |                                           Total Swap memory available                                          |   Bytes  |
+|205|        SYSTEM_UPTIME        |                                                  System uptime                                                 |     s    |
+|206|        CPU_USAGE_USER       |                                                 User CPU usage                                                 |     %    |
+|207|       CPU_USAGE_SYSTEM      |                                                System CPU usage                                                |     %    |
+|208|           CPU_TEMP          |                                                 CPU Temperature                                                |    °C    |
+|209|        PROC_CPU_USAGE       |                                              CPU Usage by process                                              |     %    |
+|210|        PROC_MEM_USED        |                                             Memory Usage by process                                            |   Bytes  |
