@@ -128,13 +128,6 @@ enum MessageId {
     BAT_3_MAJOR_ALERT_2 = 122 [ (unit) = "Unknown 😭", (description) = "Battery 3: Major Alerts 2" ];
     BAT_3_MAJOR_ALERT_3 = 123 [ (unit) = "Unknown 😭", (description) = "Battery 3: Major Alerts 3" ];
     BAT_3_MINOR_ALERT = 124 [ (unit) = "Unknown 😭", (description) = "Battery 3: Minor Alerts" ];
-    MEM_USED = 125 [ (unit) = "Bytes", (description) = "System memory in use" ];
-    MEM_TOTAL = 126 [ (unit) = "Bytes", (description) = "Total System memory available" ];
-    SWAP_USED = 127 [ (unit) = "Bytes", (description) = "Swap memory in use" ];
-    SWAP_TOTAL = 128 [ (unit) = "Bytes", (description) = "Total Swap memory available" ];
-    SYSTEM_UPTIME = 129 [ (unit) = "s", (description) = "System uptime" ];
-    CPU_USAGE = 130 [ (unit) = "%", (description) = "User CPU usage" ];
-    CPU_TEMP = 132 [ (unit) = "°C", (description) = "CPU Temperature" ];
     TX_IN_PER_SEC = 133 [ (unit) = "Metrics/s", (description) = "# of Metrics currently being collected per second" ];
     TX_OUT_PER_SEC = 134 [ (unit) = "Metrics/s", (description) = "# of Metrics currently being transmitted per second" ];
     TX_QUEUE_COUNT = 135 [ (unit) = "-", (description) = "# of Metrics currently in queue waiting for transmission" ];
@@ -146,15 +139,23 @@ enum MessageId {
     NET_TX_PACKETS = 141 [ (unit) = "", (description) = "Network packets transmitted" ];
     NET_RX_ERORRS = 142 [ (unit) = "", (description) = "Network erorrs received" ];
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
-    CPU_FREQS = 144 [ (unit) = "MHz", (description) = "CPU Frequencies" ];
     FUSED_POSITION = 145 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
     FUSED_POSITION_UNCERTAINTY = 146 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
-
+    
     FUSED_VELOCITY = 147 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
     FUSED_VELOCITY_UNCERTAINTY = 148 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
-
+    
     FUSED_ORIENTATION = 149 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
     FUSED_ORIENTATION_UNCERTAINTY = 150 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
-
-
+    
+    CPU_FREQS = 200 [ (unit) = "MHz", (description) = "CPU Frequencies" ];
+    MEM_USED = 201 [ (unit) = "Bytes", (description) = "System memory in use" ];
+    MEM_TOTAL = 202 [ (unit) = "Bytes", (description) = "Total System memory available" ];
+    SWAP_USED = 203 [ (unit) = "Bytes", (description) = "Swap memory in use" ];
+    SWAP_TOTAL = 204 [ (unit) = "Bytes", (description) = "Total Swap memory available" ];
+    SYSTEM_UPTIME = 205 [ (unit) = "s", (description) = "System uptime" ];
+    CPU_USAGE = 206 [ (unit) = "%", (description) = "User CPU usage" ];
+    CPU_TEMP = 207 [ (unit) = "°C", (description) = "CPU Temperature" ];
+    PROC_CPU_USAGE = 208 [ (unit) = "%", (description) = "CPU Usage by process" ];
+    PROC_MEM_USED = 209 [ (unit) = "Bytes", (description) = "Memory Usage by process" ];
 }
