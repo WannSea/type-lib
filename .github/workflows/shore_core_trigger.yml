@@ -1,4 +1,4 @@
-name: WannSea Shore Core v2 trigger
+name: WannSea Shore Core v2 trigger 
 
 on:
   push:
