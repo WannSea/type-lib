@@ -154,8 +154,9 @@ enum MessageId {
     SWAP_USED = 203 [ (unit) = "Bytes", (description) = "Swap memory in use" ];
     SWAP_TOTAL = 204 [ (unit) = "Bytes", (description) = "Total Swap memory available" ];
     SYSTEM_UPTIME = 205 [ (unit) = "s", (description) = "System uptime" ];
-    CPU_USAGE = 206 [ (unit) = "%", (description) = "User CPU usage" ];
-    CPU_TEMP = 207 [ (unit) = "°C", (description) = "CPU Temperature" ];
-    PROC_CPU_USAGE = 208 [ (unit) = "%", (description) = "CPU Usage by process" ];
-    PROC_MEM_USED = 209 [ (unit) = "Bytes", (description) = "Memory Usage by process" ];
+    CPU_USAGE_USER = 206 [ (unit) = "%", (description) = "User CPU usage" ];
+    CPU_USAGE_SYSTEM = 207 [ (unit) = "%", (description) = "System CPU usage" ];
+    CPU_TEMP = 208 [ (unit) = "°C", (description) = "CPU Temperature" ];
+    PROC_CPU_USAGE = 209 [ (unit) = "%", (description) = "CPU Usage by process" ];
+    PROC_MEM_USED = 210 [ (unit) = "Bytes", (description) = "Memory Usage by process" ];
 }
