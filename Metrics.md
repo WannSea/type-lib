@@ -147,3 +147,16 @@
 |208|           CPU_TEMP          |                                                 CPU Temperature                                                |      °C      |
 |209|        PROC_CPU_USAGE       |                                              CPU Usage by process                                              |       %      |
 |210|        PROC_MEM_USED        |                                             Memory Usage by process                                            |MegaBytes (MB)|
+|300|           ESC_RPM           |                                              Rotations per Minute                                              |    min^-1    |
+|301|      ESC_TOTAL_CURRENT      |                                         ESC Total Current by all Units                                         |       A      |
+|302|        ESC_DUTY_CYCLE       |                                              Latest PWM Duty Cycle                                             |       %      |
+|303|        ESC_AMP_HOURS        |                                            ESC consumed Ampere Hours                                           |      Ah      |
+|304|    ESC_AMP_HOURS_CHARGED    |                                        ESC consumed Ampere Hours charged                                       |      Ah      |
+|305|        ESC_WATT_HOURS       |                                             ESC consumed Watt Hours                                            |      Wh      |
+|306|    ESC_WATT_HOURS_CHARGED   |                                         ESC consumed Watt Hours charged                                        |      Wh      |
+|307|       ESC_MOSFET_TEMP       |                                             ESC MOSFET Temperature                                             |      °C      |
+|308|        ESC_MOTOR_TEMP       |                                                Motor Temperature                                               |      °C      |
+|309|     ESC_TOTAL_IN_CURRENT    |                                             ESC Total Input Current                                            |       A      |
+|310|         ESC_PID_POS         |                                                ESC PID Position                                                |       #      |
+|311|        ESC_TACHOMETER       |                              ESC Tachometer, assumed RPM? (interpretation unsure)                              |   min^-1 ?   |
+|312|        ESC_IN_VOLTAGE       |                                               ESC Output Voltage                                               |       V      |
