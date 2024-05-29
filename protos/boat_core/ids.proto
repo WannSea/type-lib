@@ -159,4 +159,19 @@ enum MessageId {
     CPU_TEMP = 208 [ (unit) = "°C", (description) = "CPU Temperature" ];
     PROC_CPU_USAGE = 209 [ (unit) = "%", (description) = "CPU Usage by process" ];
     PROC_MEM_USED = 210 [ (unit) = "MegaBytes (MB)", (description) = "Memory Usage by process" ];
+
+    ESC_RPM = 300 [ (unit) = "min^-1", (description) = "Rotations per Minute" ];
+    ESC_TOTAL_CURRENT  = 301 [ (unit) = "A", (description) = "ESC Total Current by all Units" ];
+    ESC_DUTY_CYCLE = 302 [ (unit) = "%", (description) = "Latest PWM Duty Cycle" ];
+    ESC_AMP_HOURS = 303 [ (unit) = "Ah", (description) = "ESC consumed Ampere Hours" ];
+    ESC_AMP_HOURS_CHARGED = 304 [ (unit) = "Ah", (description) = "ESC consumed Ampere Hours charged" ];
+    ESC_WATT_HOURS = 305 [ (unit) = "Wh", (description) = "ESC consumed Watt Hours" ];
+    ESC_WATT_HOURS_CHARGED = 306 [ (unit) = "Wh", (description) = "ESC consumed Watt Hours charged" ];
+    ESC_MOSFET_TEMP = 307 [ (unit) = "°C", (description) = "ESC MOSFET Temperature" ];
+    ESC_MOTOR_TEMP = 308 [ (unit) = "°C", (description) = "Motor Temperature" ];
+    ESC_TOTAL_IN_CURRENT = 309 [ (unit) = "A", (description) = "ESC Total Input Current" ];
+    ESC_PID_POS = 310 [ (unit) = "#", (description) = "ESC PID Position" ];
+    ESC_TACHOMETER = 311 [ (unit) = "min^-1 ?", (description) = "ESC Tachometer, assumed RPM? (interpretation unsure)" ];
+    ESC_IN_VOLTAGE = 312 [ (unit) = "V", (description) = "ESC Output Voltage" ];
+
 }
