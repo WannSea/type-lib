@@ -160,3 +160,7 @@
 |310|         ESC_PID_POS         |                                                ESC PID Position                                                |       #      |
 |311|        ESC_TACHOMETER       |                              ESC Tachometer, assumed RPM? (interpretation unsure)                              |   min^-1 ?   |
 |312|        ESC_IN_VOLTAGE       |                                               ESC Output Voltage                                               |       V      |
+|313|         ESC_SET_DUTY        |                                           Commanded Duty Cycle on ESC                                          |       %      |
+|314|       ESC_SET_CURRENT       |                                         Commanded current output on ESC                                        |      mA      |
+|316|         ESC_SET_RPM         |                                              Commanded RPM on ESC                                              |    min^-1    |
+|317|     ESC_SET_CURRENT_REL     |       Commanded relative current on ESC (If upper and lower limits are  asymmetric command 0 is not 0 A)       |       %      |
