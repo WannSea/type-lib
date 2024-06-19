@@ -173,5 +173,8 @@ enum MessageId {
     ESC_PID_POS = 310 [ (unit) = "#", (description) = "ESC PID Position" ];
     ESC_TACHOMETER = 311 [ (unit) = "min^-1 ?", (description) = "ESC Tachometer, assumed RPM? (interpretation unsure)" ];
     ESC_IN_VOLTAGE = 312 [ (unit) = "V", (description) = "ESC Output Voltage" ];
-
+    ESC_SET_DUTY = 313 [ (unit) = "%", (description) = "Commanded Duty Cycle on ESC" ];
+    ESC_SET_CURRENT = 314 [ (unit) = "mA", (description) = "Commanded current output on ESC" ];
+    ESC_SET_RPM = 316 [(unit) = "min^-1", (description) = "Commanded RPM on ESC" ];
+    ESC_SET_CURRENT_REL = 317 [ (unit) = "%", (description) = "Commanded relative current on ESC (If upper and lower limits are  asymmetric command 0 is not 0 A)" ];
 }
