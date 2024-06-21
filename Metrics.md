@@ -165,3 +165,4 @@
 |314|       ESC_SET_CURRENT       |                                         Commanded current output on ESC                                        |      mA      |
 |316|         ESC_SET_RPM         |                                              Commanded RPM on ESC                                              |    min^-1    |
 |317|     ESC_SET_CURRENT_REL     |       Commanded relative current on ESC (If upper and lower limits are  asymmetric command 0 is not 0 A)       |       %      |
+|318|     CELLULAR_MODULE_TEMP    |                                               Temp of LTE module                                               |      °C      |
