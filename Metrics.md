@@ -166,4 +166,5 @@
 |316|         ESC_SET_RPM         |                                              Commanded RPM on ESC                                              |    min^-1    |
 |317|     ESC_SET_CURRENT_REL     |       Commanded relative current on ESC (If upper and lower limits are  asymmetric command 0 is not 0 A)       |       %      |
 |318|     CELLULAR_MODULE_TEMP    |                                               Temp of LTE module                                               |      °C      |
-|319|   CELLULAR_MODULE_LOG_MSG   |                                        Other less important log messages                                       |     Text     |
+|319|   CELLULAR_MODULE_VOLTAGE   |                                              Voltage of LTE module                                             |       V      |
+|320|   CELLULAR_MODULE_LOG_MSG   |                                        Other less important log messages                                       |     Text     |
