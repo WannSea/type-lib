@@ -177,4 +177,6 @@ enum MessageId {
     ESC_SET_CURRENT = 314 [ (unit) = "mA", (description) = "Commanded current output on ESC" ];
     ESC_SET_RPM = 316 [(unit) = "min^-1", (description) = "Commanded RPM on ESC" ];
     ESC_SET_CURRENT_REL = 317 [ (unit) = "%", (description) = "Commanded relative current on ESC (If upper and lower limits are  asymmetric command 0 is not 0 A)" ];
-}
+
+    CELLULAR_MODULE_TEMP = 318  [ (unit) = "°C", (description) = "Temp of LTE module" ];
+  }
