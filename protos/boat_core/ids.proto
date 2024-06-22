@@ -182,4 +182,6 @@ enum MessageId {
     CELLULAR_MODULE_VOLTAGE = 319  [ (unit) = "V", (description) = "Voltage of LTE module" ];
     CELLULAR_MODULE_LOG_MSG = 320  [ (unit) = "Text", (description) = "Other less important log messages" ];
 
+    THROTTLE_POS = 321 [ (unit) = "%", (description) = "Throttle position" ];
+
   }
