@@ -139,7 +139,6 @@ enum MessageId {
     NET_TX_PACKETS = 141 [ (unit) = "", (description) = "Network packets transmitted" ];
     NET_RX_ERORRS = 142 [ (unit) = "", (description) = "Network erorrs received" ];
     NET_TX_ERORRS = 143 [ (unit) = "", (description) = "Network errors transmitted" ];
-    MOTOR_TEMPERATURE = 145 [(unit) = "°C", (description) = "Motor Temperature measured by internal thermistor" ];
 
     FUSED_POSITION_RELATIVE = 144 [ (unit) = "m", (description) = "(x / y) Fused Position relative to reference Point" ];
     FUSED_POSITION = 145 [ (unit) = "°", (description) = "(Lat / Lon) after IMU+GNSS Fusion" ];
@@ -149,6 +148,8 @@ enum MessageId {
     FUSED_ORIENTATION = 149 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
     FUSED_ORIENTATION_UNCERTAINTY = 150 [ (unit) = "tbd", (description) = "IMU+GNSS Fusion" ];
     
+    MOTOR_TEMPERATURE = 151 [(unit) = "°C", (description) = "Motor Temperature measured by internal thermistor" ];
+
     CPU_FREQS = 200 [ (unit) = "MHz", (description) = "CPU Frequencies" ];
     MEM_USED = 201 [ (unit) = "Bytes", (description) = "System memory in use" ];
     MEM_TOTAL = 202 [ (unit) = "Bytes", (description) = "Total System memory available" ];
