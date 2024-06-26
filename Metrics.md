@@ -130,6 +130,7 @@
 |141|        NET_TX_PACKETS       |                                           Network packets transmitted                                          |              |
 |142|        NET_RX_ERORRS        |                                             Network erorrs received                                            |              |
 |143|        NET_TX_ERORRS        |                                           Network errors transmitted                                           |              |
+|145|      MOTOR_TEMPERATURE      |                                Motor Temperature measured by internal thermistor                               |      °C      |
 |144|   FUSED_POSITION_RELATIVE   |                               (x / y) Fused Position relative to reference Point                               |       m      |
 |145|        FUSED_POSITION       |                                        (Lat / Lon) after IMU+GNSS Fusion                                       |       °      |
 |146|  FUSED_POSITION_UNCERTAINTY |                                                 IMU+GNSS Fusion                                                |      tbd     |
