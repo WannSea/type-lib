@@ -186,4 +186,8 @@ enum MessageId {
 
     THROTTLE_POS = 321 [ (unit) = "%", (description) = "Throttle position" ];
 
+    PCS_TEMP = 323 [ (unit) = "°C", (description) = "PCS Temp" ];
+
+    LPMainPower = 324 [ (unit) = "mW", (description) = "LP Main Power" ];
+
   }
