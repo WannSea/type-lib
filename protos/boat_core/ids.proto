@@ -188,6 +188,7 @@ enum MessageId {
 
     PCS_TEMP = 323 [ (unit) = "°C", (description) = "PCS Temp" ];
 
-    LPMainPower = 324 [ (unit) = "mW", (description) = "LP Main Power" ];
+    LP_MAIN_POWER = 324 [ (unit) = "mW", (description) = "LP Main Power" ];
 
+    ESC_TOTAL_IN_POWER = 325 [ (unit) = "W", (description) = "Calculated Total Power IN" ];
   }
