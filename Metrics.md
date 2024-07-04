@@ -171,4 +171,5 @@
 |320|   CELLULAR_MODULE_LOG_MSG   |                                        Other less important log messages                                       |     Text     |
 |321|         THROTTLE_POS        |                                                Throttle position                                               |       %      |
 |323|           PCS_TEMP          |                                                    PCS Temp                                                    |      °C      |
-|324|         LPMainPower         |                                                  LP Main Power                                                 |      mW      |
+|324|        LP_MAIN_POWER        |                                                  LP Main Power                                                 |      mW      |
+|325|      ESC_TOTAL_IN_POWER     |                                            Calculated Total Power IN                                           |       W      |
